@@ -1,0 +1,51 @@
+- muốn thêm một ruler tự định nghĩ trong validation có 2 cách:
+======================================================================================================================================
+1. trực tiếp tạo một hàm Closures(hàm ẩn) trong rule. ví đụ;
+ public function rules()
+{
+    return [
+        'name' => [
+            'required',
+            'size:6',
+            function ($attribute, $value, $fail) {
+
+            }
+        ],
+        
+        'number' => [
+            'required',
+            'numeric'
+            function ($attribute, $value, $fail) {
+
+            }
+        ]
+    ];
+}
+trong đó: 
+$attribute: tên filed của validate tương ứng, ở đây laf nam và number.
+$value: giá trị nhận vào khi người dùng submit form.
+$faiil: là một callback được gọi đến khi việc validate thất bại. đây chính là nơi ta truyền vào thông báo khi validate thất bại.
+ví dụ: 
+function ($attribute, $value, $fail) {
+    if (strtoupper($value) !== $value) {
+        return $fail("The $attribute must be upper case");
+    }
+}
+=====================================================================================================================================
+2.sử dụng Rule Object
+Rule Object là một class mà ta có thể định nghĩa các custom rule tương tự như Closure.ưu điểm khi sửa lổi chỉ cần vào class rule sửavà
+tất cả các vị trí sửa dụng íntance của class sẽ được cập nhập theo.
+tại 1 Rule Object sử dụng cú pháp : $php artían make:rule [class name]
+
+trong class rule này sẽ có 3 hàm;
+_cóntruct(): hàm khởi tạo của rule, nơi ta có thể truyền thêm các biến khác vào.
+passes(): hàm để định nghĩa giá trị của filed cần valite có thoả mãn hay không(2 biến $attribute và $value có giá trị tương tự sử dụng Cloure)
+mesage():  thông báo nếu điều kiện không thoả mãn
+
+trong class request phần rule ta khởi tạo class rule object.
+ví dụ tên class rule object là CustomEvenNumber :
+'number' => [
+    'required',
+    'numeric',
+    new CustomEvenNumber($this->name),
+]

@@ -1,0 +1,21 @@
+- error_get_last(): trả lại lỗi cuối cùng
+-error_log(message, type, destination, headers); trả về lổi của log, mail, file, connect
+- error_reporting(level) : chỉ mức độ của lỗi
+- restore_error_handler(): khôi phục lại erro trước đó.
+- new Exception(message, code, previous): set up a new exception object.
+Các phương thức khác của Exception:
+- getCode(): trả về mã lỗi
+- getMessage(): trả về message lỗi.
+- getFile(): trả về tên file bị lỗi.
+- getLine(): trả về số dòng nơi xảy ra lỗi.
+- getTrace(): trả về thông tin truy vết lỗi là một mảng các tên file và số dòng.
+
+Statu Code:
+404 : not found(page or other resource doesnt exist.
+401 : not authorized (not logged in)
+403 : Logged iin but access to requested area iis  forbidden.
+400 : Bad request(something wrong with URL or parameters).
+422 : Unprocessable Entity (validation failed)
+500 : General server error.
+
+-response(): thông báo phản hồi HTTP, kết quả server trả về cho client.

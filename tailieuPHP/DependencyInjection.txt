@@ -1,0 +1,12 @@
+ - Nguyên lý Inversion of Control là gì? sử dụng các interface  liên kết giữa các class để giảm tính phụ thuộc trong các module thuận lợi trong việc quản lý và phát triển dự án
+ví dụ: https://allaravel.com/blog/inversion-of-control-nguyen-ly-cua-cac-nguyen-ly
+-  Nguyên lý Decorator Pattern giúp mở rộng tính năng của class trở nên dễ dàng hơn mà không cần thay đổi class cũ bằng cách tạo class abstract mới implement từ interface của class cũ,
+ví dụ: https://allaravel.com/blog/decorator-design-pattern-trong-php/
+-SOLID là viết tắt các chữ cái đầu của 5 nguyên lý trong thiết kế hướng đối tượng được đưa ra bởi Robert C. Martin. Các nguyên lý này giúp cho lập trình viên phát triển các ứng dụng dễ dàng duy trì và mở rộng. Nắm vững các nguyên tắc trong SOLID, áp dụng chúng trong thiết kế và viết code, bạn đã sẵn sàng trở thành một lão làng trong nghề code. SOLID là 5 nguyên lý sau trong thiết kế hướng đối tượng
+
+   S - Single-responsiblity principle (Nguyên lý đơn chức năng): một class chỉ thực hiện 1 chức năng
+   O - Open-closed principle (Nguyên lý đóng mở): Các đối tượng hoặc thực thể có thể mở rộng nhưng không được thay đổi.
+   L - Liskov substitution principle (Nguyên lý thay thế Liskov)
+   I - Interface segregation principle (Nguyên lý phân tách interface)
+   D - Dependency Inversion Principle (Nguyên lý đảo ngược phụ thuộc)
+-Repository Pattern là lớp trung gian giữa tầng Business Logic và Data Access, giúp cho việc truy cập dữ liệu chặt chẽ và bảo mật hơn.

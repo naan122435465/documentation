@@ -1,0 +1,82 @@
+
+BIẾN
+
+- Biến là một định danh, nó dùng để lưu trữ các giá trị và nó có thể dùng phép gán để thay đổi giá trị.
+- cú pháp: biến bắt đầu bằng $ và tiếp theo là các chữ, số, dấu gạch dưới. ký tự đầy tiên của biến phải là chữ hoặc dấu gạch dưới, KHÔNG ĐƯỢC LÀ SỐ. có phân biệt chữ hoa và chữ thường.
+- Gán biến: dùng phép  gán = 
+================================================================================================================================================================
+KIỂU DỮ LIỆU
+
+
+- Kiểu INT viết tắt của INTERGER là một kiểu dữ liệu dạng số nguyên. có kích thước là 32bit, không dùng dấu nháy để bao quanh nó khi gán giá trị.
+ép kiểu dữ liệu là sng kiểu INT 
+cú pháp: (int)$ten_bien
+ví dụ biến $a kiểu string, $b kiểu int thì các biến sẽ tự động chuyển sang kiểu int để thích hơp công,
+$a = '123';
+$b = 123;
+$c = $a +$b;
+kết quả trả về của $c là kiểu int 246
+ ví dụ 2: $a = 'a123'
+khi ép kiểu của a thì trả về gias trị bằng 0 vì ký tự đầu tiên không phải ở dạng số nên nó tự động cắt bỏ tất cả các ký tự sau kys tự a nên chuỗi này là chuỗi rỗng, chuyển qua int thì bằng 0
+ví dụ  $a = '123a'
+thì khi ép kiểu int thì nó  trả về giá trị của a là 123.
+để kiểm tra 1 biến có phải là kiểu int hay không, dùng hàm: is_int($bien) hoặc is_integer($bien) kết quả trả về là true / false
+
+================================================================================================================================================================
+KIỂU DỮ LIỆU BOOLEAN
+
+kiểu dữ liệu boolean chỉ chứa 2  giá trị true / false.
+để tạo biến boolean thì gán giá trị cho nó là trị
+- ép dữ liệu sang kiểu boolean 
+cú pháp (boolean)$ten_bien; hoặc (bool)$ten_bien
+kiểm tra biến kiểu boolean dùng hàm : is_bool($bien);
+
+=============================================================================================================================================================
+KIỂU SỐ THỰC
+- float , double 
+- ép kiểu dữ liệu tưởng tự;
+cú pháp : (float)$ten_bien;
+	(double)$ten_bien;
+- kiểm tra một biến số thực:  
+	is_float($bien);
+	is_double($bien);
+
+======================================================================================================================
+KIỂU KỸ TỰ VÀ KIẺU CHUỖI
+
+- Kiểu ký tự char  và kiểu chuỗi khi khai báo thì gán giá trị cho biến, giá trị được đặt trong dấu nhays đơn ' ' hoặc dấu nháy kép " " ;
+- ép kiểu dữ liệu tương tự : 
+	(char)$ten_bien;
+	(string)$ten_bien;
+- kiếm tra một biến kiểu string
+	is_string($bien);
+
+==========================================================================================================================
+
+KIỂU MẢNG( ARRAY)
+- mảng là danh sách các phần tử 
+- có 2 loại: mảng một chiều và mảng đa chiều.
+- cú pháp khai báo: $ten_mang = array();
+- khởi tạo mảng :
+c1: $ten_mang = array(gia_tri1, gia_tri2);
+c2: $ten_mang = array( 
+			0=>gia_tri1,
+			1=> gia_tri2
+		);
+c3: $ten_mang = array()
+    $ten_mang[0] = gia_tri1;
+    $ten_mang[1] = gia_tri2;
+c4 : $ten_mang = array();	
+     $ten_mang [] = gia_tri1;
+     $ten_mang[] = gia_trii2;
+
+- Để truy xuất mảng ta dùng cú pháp: $tenmang[$name]
+- kiểm tra một biến kiểu mảng : is_array($bien)
+
+====================================================================================================
+KIỂU GIÁ TRỊ  NULL
+
+-lúc khởi tạo một biến và gán  = NULL thì hệ thống sẽ không tốn bộ nhớ để lưu trữ nên việc sữ dụng nó rất có lợi.
+- Kiểu NULL kho ếp kiểu sang INT thì bằng 0, sang chuỗi thì bằng rôngx, sang kiểu boolean thì mang giá trị FALSE.
+- Kiểm tra một biến có giá trị null: is_null($bien);
+	

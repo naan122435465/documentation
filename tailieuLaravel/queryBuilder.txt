@@ -1,0 +1,84 @@
+Retrieving All Rows From A Table
+ - lấy kết quả bằng phương thức get()
+ví dụ: $user = DB:table('users')->get(); kết quả trả về là lấy tất cả các user có trong bảng
+
+- frist() : trả về một đối tượng đơn
+
+- value('ten_gia_tri') : lấy ra một giá trị từ một bảng ghi. trả về giá trị của một cột của một hàng.
+ví dụ: $email = DB::table('users')->where('name', 'John')->value('email');
+kết quả trả về email 
+- pluck ('ten_cot') : lấy các giá trị của một cột.
+
+$titles = DB::table('roles')->pluck('title');
+
+foreach ($titles as $title) {
+    echo $title;
+}
+kết quả trả về list titles
+
+- select('ten_cot') : lấy cột tuỳ chọn.
+
+- distinct() : ép buộc kết quả truy vấn trả về
+
+- DB::raw : tạo một raw expression.
+
+- join : thực hiện 'inner join' sql cơ bản. tham số được truyền vào đầu tiên trong phương thức join là tên của bảng bạn join đến. trong khi các tham số còn lại chỉ định các cột ràng buộc
+cho việc join.
+ví dụ: $users = DB::table('users')
+            ->join('contacts', 'users.id', '=', 'contacts.user_id')
+            ->join('orders', 'users.id', '=', 'orders.user_id')
+            ->select('users.*', 'contacts.phone', 'orders.price')
+            ->get();
+- left join
+
+- cross join : kết hợp 2 bảng. sử dụng phương thưc crossJoin với tên của bảng muốn cross join đến, cross join sinh ra một cartesion product giữa bảng đầu tiên và bảng được join.
+
+- unions: query builder cũng cung cấp một cách nhanh chóng để union 2 truy vấn với nhau. 
+ví dụ: bạn có thể tạo một truy vấn khởi tạo , sau đó sử dụng phương thức union để nối nó vào truy vấn thứ 2: 
+$first = DB::table('users')
+            ->whereNull('first_name');
+
+$users = DB::table('users')
+            ->whereNull('last_name')
+            ->union($first)
+            ->get();
+
+WHERE CLAUSES
+- where
+- orWhere
+- whereBetween : kiểm tra giá trị một cột có ở giữa 2 giá trị.
+- whereNotBetween : kiểm tra giá trị của cột có nằm ngoài 2 giá trị.
+-  whereIn /  whereNotIn : kiểm tra giá trị nằm/ không nằm trong một mảng.
+ví du : $users = DB::table('users')
+                  ->whereIn('id', [1, 2, 3])
+                  ->get();
+- whereNull : kiểm tra giá trị của cột đã cho là NULL
+- whereNotNull : kiểm tra giá trị của một cột đã cho không là NULL.
+- whereDate: so sánh cột giá trị cột với ngày.
+- whereMonth: so sánh cột giá trị với 1 tháng .
+- whereDay : so sánh giá trị cột với một ngày đăc biệt của tháng.
+- whereYear : so sánh giá trị cột với một năm.
+- wherExists : cho phép bạn viết một mệnh đề where exists.  
+ví dụ: DB::table('users')
+          ->whereExists(function ($query) {
+              $query->select(DB::raw(1))
+                    ->from('orders')
+                    ->whereRaw('orders.user_id = users.id');
+          })
+          ->get();
+truy vấn trên sẽ sinh ra đoạn sql sau: 
+select * from users
+where exists (
+ select 1 from orders where orders.user_id = users.id
+)
+
+- orderBy: sắp xếp kết quả truy vấn bởi 1 cột cho trước.  tham số đầu tiên là tên cột muốn sắp xếp, tham số thứ 2 là chiều sắp xếp có thể là asc hoặc desc 
+ví dụ orderBy('name', 'asc');
+
+- lastest / oldest : sắp xếp kết quả theo ngày.  theo mặt định, kết quả sắp xếp theo cột create_at.
+
+- inRandomOder: sắp xếp kết quả truy vấn một cách ngẫu nhiên.
+
+- groupBy / having / havingRaw: nhóm kết quả truy vấn.
+
+- skip/ take/ limit/ offset : giới hạn kết quả trả về.

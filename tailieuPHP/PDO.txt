@@ -1,0 +1,17 @@
+PDO cung cấp các cơ chế Prepared Statêmnts, Stored Procedues và giúp thao tác với database thông qua các Object làm cho công việc trờ nên hiệu quả và dễ dàng hơn.
+PHP Data Objects(PDO) là một lớp truy xuất cơ sở dữ liệu cung cấp một phương pháp thống nhất để làm việc với nhiều loại cơ sở dữ liệu khác nhau.
+Connection String của các DBMS phổ biến hầu hết có dạng như sau:
+$conn =  new PDO('mysql:host=localhost;dbname=namedatabase' , $username, $password);
+để ngắt kết nối thì set $conn về null: $conn = null;
+
+
+PDO::FETCH_ASSOC: Trả về dữ liệu dạng mảng với key là tên của column (column của các table trong database)
+PDO::FETCH_BOTH (default): Trả về dữ liệu dạng mảng với key là tên của column và cả số thứ tự của column
+PDO::FETCH_BOUND: Gán giá trị của từng column cho từng biến đã khởi tạo trước đó qua phương thức bindColumn()
+PDO::FETCH_CLASS: Gán giá trị của từng column cho từng thuộc tính (property/attribute) của một lớp Class theo tên column và tên thuộc tính.
+PDO::FETCH_INTO: Gán giá trị của từng column cho từng thuộc tính của một Class Instance (thể hiện của một lớp)
+PDO::FETCH_LAZY: Gộp chung PDO::FETCH_BOTH/PDO::FETCH_OBJ
+PDO::FETCH_NUM: Trả về dữ liệu dạng mảng với key là số thứ tự của column
+PDO::FETCH_OBJ: Trả về một Object của stdClass (link is external) với tên thuộc tính của Object là tên của column.
+
+link tham khảo: https://viblo.asia/p/pdo-trong-php-khai-niem-va-nhung-thao-tac-co-ban-57rVRq59R4bP

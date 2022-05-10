@@ -1,0 +1,63 @@
+-array_change_key_case(array, case): uppercase key 
+-array_chunk(): tách một mảng thành nhiều mảng
+-array_column(array, column_key, index_key):trả lại 1 mảng theo  key
+-array_combine(keys, values) : gộp 2 mảng thành 1 mảng, trong đó  đầu mảng là key, mảng sau là value.
+Điều quan trọng nhất kh sử dụng array_combine() là số phần tử của cả 2 mảng phải bằng nhau
+-array_count_values(array): trả lại 1 mảng trong đó key là tên value ,value mảng là số value trùng nhau 
+-so sánh trả mảng khác nhau:
+  +array_diff(array1, array2, array3, ...): theo value 
+  +array_diff_assoc(array1,array2,array3...):  theo value và key
+  +array_diff_key(array1, array2, array3, ...):theo key
+  +array_diff_uassoc(array1, array2, array3, ..., myfunction): các mảng theo key và value so sánh dựa trên myfunction 
+  +array_diff_ukey(array1, array2, array3, ..., myfunction):  các mảng theo key dựa trên myfuntion
+-array_flip(array): đổi key thành value, value thành key,
+-so sánh trả mảng giống nhau
+  +array_intersect(array1, array2, array3, ...): theo value.
+  +array_intersect_assoc(array1,array2,array3, ...): theo value và key
+  +array_intersect_key(array1, array2, array3, ...): theo key.
+  +array_intersect_uassoc(array1, array2, array3, ..., myfunction):  các mảng theo key và value so sánh dựa trên myfunction
+  +array_intersect_ukey(array1, array2, array3, ..., myfunction):các mảng theo key dựa trên myfuntion
+ -array_key_exists(key, array): kiểm tra key có trong mảng không.
+-array_keys(array, value, strict): trả lại mảng chứa các key
+-array_map(myfunction, array1, array2, array3, ...): trả về mảng với những value mới(value đã chạy hàm myfunction)
+-array_merge(array1, array2, array3, ...): gộp nhiều mảng thành 1 mảng nhưng những key trùng nhau thì bị ghi đè bởi key sau.
+-array_merge_recursive(array1, array2, array3, ...): gộp nhiều mảng thành 1 mảng, những key trùng nhau được tạo thành 1 mảng trong mảng.
+-array_multisort(array1, sortorder, sorttype, array2, array3, ...): sắp xếp mảng 
+-array_pad(array, size, value). chèn vào mảng, nếu size <0 thì chèn đầu mảng và ngược lại
+-array_pop(array): delete phần tử cuối mảng
+-array_product(array): tính tích của một mảng.
+-array_push(array, value1, value2, ...): insert vào cuối mảng, keys là numberic
+-array_rand(array, number): trả về number key random
+-array_reduce(array, myfunction, initial): trả lại một string gồm các mảng theo function
+-array_replace(array1, array2, array3, ...): gán mảng, trùng key thì lấy giá trị của mảng cuối , còn nếu mảng 1 có mảng 2 k có thì giữ nguyên, mảng 2 có mà mảng 1 k có thì ghi thêm, còn nếu k có key thì tự động tạo key là numberic. mảng sau sẽ ghi đè lên mảng trước
+-array_replace_recursive() : hoạt động như array_replace nhưng mảng sau sẽ không bị ghi đè lên mảng trước
+-array_reverse(array, preserve): đảo ngược mảng
+-array_search(value, array, strict): trả lại key có chưa value trong mảng
+-array_shift(array): xoá đi phần tử đầu tiên trong mảng và trả lại phần tử bị xoá đi
+-array_slice(array, start, length, preserve): trả lại mảng từ chỉ số start có độ dài length và key được giữ nguyên nếu key là string
+-array_splice(array, start, length, array): xoá đi phần length phần tử từ start, không giữ nguyên key.
+-array_sum(array) : tính tổng array
+-so sánh mảng:
+  +array_udiff(array1, array2, array3, ..., myfunction): theo value array1 với các array còn lại. 
+  +array_udiff_assoc(array1, array2, array3, ..., myfunction): theo value và key
+  +array_udiff_uassoc(array1, array2, array3, ..., myfunc_key, myfunc_value): theo function
+  +array_uintersect(array1, array2, array3, ..., myfunction): theo value.
+  +array_unique(array, sorttype): remove phần tử có value giống nhau, giữ cái key đầu tiên
+-array_unshift(array, value1, value2, value3, ...): insert vào value vào đầu array. key là numberic. trả lại số lượng thẻ có trong mảng mới.
+-array_values(array): trả lại một mảng chứa các value
+-array_walk(array, myfunction, parameter...): chạy myfunction cho mỗi phần tử trong array 
+-array_walk_recursive(array, myfunction, parameter...): tương tự array_walk
+-Sắp xếp
+  +arsort(array, sorttype): giảm dần theo  giá trị
+  +krsort(): giảm dần theo key
+  +asort(array, sorttype): tăng dần theo giá trị
+  +ksort() : tăng dần theo key.
+-compact(var1, var2...): tạo một mảng từ các biến và giá trị của chúng.chuỗi k khớp sẽ bị bỏ qua
+-count(array, mode): đếm mảng
+-end(array): trả lại phần tử cuối cùng trong mảng
+-extract(array, extract_rules, prefix): tạo các biến cục bộ, key là tên biến, value là giá trị của biến.
+-in_array(search, array, type): kiếm tra search có trong mảng hay k.
+-key(array): trả về vị trí con trỏ hiện tại trong mảng
+-list(var1, var2, ...): gắn giá trị cho biến bằng giá trị của mảng.
+-natcasesort(array): sắp xếp mảng theo chữ cái đầu tiên của value.
+-natsort(array): sắp xếp mảng theo chữ cái đầu tiên của key.

@@ -1,0 +1,16 @@
+trans('<file_name>.<keywork>')
+ví dụ trong /resources/lang/en/message.php như sau:
+<?php
+return [
+    'welcome' => 'Welcome to Website!',
+];
+ta sẽ gọi hàm như  sau: trans('message.welcome') thì sẽ return: Welcome to Website!
+muốn truyền tham số thì sẽ sử dụng : trước tên tham số. 
+ví dụ: 
+<?php
+return [
+    'welcome' => 'Welcome to Website!',
+    'hello' => 'Hello, :name',
+];
+ta sẽ gọi hàm như sau : trans('message.hello',['name'=>'my name'])
+ở đây ta truyền vào tham số name là my name. hàm sẽ return : Hello, my name

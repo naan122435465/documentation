@@ -1,0 +1,8 @@
+config được sử dựng khi:
+- một thông tin được sử dụng ở nhiều nơi, nhiều lần, và muốn thay đổi dễ dàng sau này.
+- khi xây dựng 1 package laravel, các tập tin cấu hình sẽ giúp bạn xây dựng một package phần mềm có cấu hình và chức năng.
+ví dụ: 
+return [
+    'facebook' => 'https://www.facebook.com/scotchdevelopment',
+    'twitter' => 'https://twitter.com/scotch_io'
+];

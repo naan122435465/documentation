@@ -1,0 +1,19 @@
+?: 
+vídụ: $x = expr1 ? expr2 : expr3 
+$x sẽ bằng expr2 khi expr1 true, ngược lại thì $x = expr3.
+??
+ví dụ: $x = expr1 ?? expr2 
+$x = expr1 khi expr1 tồn tại hoặc không bằng null, ngược lại thì bằng expr2
+KEYWORD: 
+
+-callable : từ khoá để xác định parameter là một hàm.
+- clone : dùng để tạo ra một đối tượng copy của đối tượng khác.
+- empty: trả về true nếu rổng hoặc k tồn tại .
+- instanceof: check obj có nằm trong class k.
+- isset() : kiếm tra biến đó có khai báo và không bằng null k. 
+-settype(variable, type);: chuyển đổi biến thành một kiểu cụ thể.
+-unset(variable, ....);: bỏ khai báo biến.
+-Json_encode: chuyển array thành json.json_decode thì ngược lại
+-Require và include :Cả 2 đều là câu lên để gọi 1 file vào trong file hiện tại
+Nếu bị lỗi -> require sẽ tạo ra 1 lỗi và dừng chương trình/ còn include sẽ đưa ra cảnh báo và tiếp tục
+Ngoài ra còn có include_once và require_once

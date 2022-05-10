@@ -1,0 +1,6 @@
+- define(name,value,case_insensitive): định nghĩa 1 constant
+- constant(constant): hàm gọi constant.
+- defined(name): kiểm tra constant name có tồn tại không.
+-const: cũng dùng để định nghĩa 1 contstant . ví dụ: const $a = "hjskgd";
+-contstant :  không thể thay đổi trong suốt quá trình chạy chương trình.
+nếu 1 hằng được định nghĩa 2 lần thì chương trình vẫn chạy bình thường tuy nhiên hằng chỉ nhận giá trị được định nghĩa đầu tiên.

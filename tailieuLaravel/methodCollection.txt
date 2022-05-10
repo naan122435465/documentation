@@ -1,0 +1,39 @@
+khi sử dụng Eloquent của laravel truy vấn kết quả trả về một danh sách bản ghi, chúng là tập hợp của các Object Eloquent, và đó chính là Collection. ( Illuminate\Support\Collection)
+
+- chunk() : nhóm một số lượng bản ghi thành các nhóm nhỏ để thuận tiện cho việc show hoặc xử lý dữ liệu. 
+ví dụ 1 nhóm student  có 12 phần tử chia thành 3 nhóm mỗi nhóm có 4 phần từ. $chunkStudents = $student->chunk(4). vậy là trong $chunkStudents có 3 nhóm mỗi nhóm có 4 phần tử.
+
+- collapse() : đây là method ngược lại với method chunk(), gộp các nhóm nhỏ thành 1 collection duy nhất.
+ví dụ: $conllapseStudents =  $chunkStudents->collapse();
+
+- agv(), average(): hàm tính giá trị trung bình của  một trường trong toàn bộ bảng ghi. ví dụ trong students có field point, tính điểm trung bình của point : $students->avg('point');
+
+- isEmpty(), isNotEmpty() : kiểm tra xem collection có chứa phần tử nào không.  $students->isEmpty();
+
+- max(), min() : lấy giá trị lớn nhất của một field trong bản ghi. ví dụ: $students ->max('point');
+
+- count() : trả về số bảng ghi có trong Collection. ví dụ : $students->count();
+
+- pluck() : lấy  toàn bộ một field nào đó và trả vè mảng chứa giá trị của tất cả các field đó.
+ví dụ: lấy toàn bộ id có trong bảng  ghi. $students->pluck('id');
+kết quả trả về là một mảng chứa các id của student.
+
+- filter() : lọc các bnảg ghi theo một điều kiện nào đó. 
+ví dụ : $filterStudents = $students-> filter(function($student, $key){ return $student->point >5; });
+kết quả trả về những student có point > 5 .
+
+- map() : tạo một collection mới dựa theo collection cũ với một số thay đổi nào đó.
+ $newStudent = $student->map(function($student, $key){ $student -> point +=1; return $student;});
+kết quả trả về là một mảng mới newStudent cộng mỗi sinh viên thêm 1 điểm.
+
+- first(): lấy phần tử đầu tiên của collection
+- last() : lấy phần tử cuối cùng của collection, 
+ví dụ: $fristStudent = $student->first(); trả về kết quả đầu tiền của collection.
+	$fristConditionStudent = $student ->frist(function($student, $key) { return $student -> point == 10;}); : trả về student đầu tiên được 10đ theo thứ tự trong bảng ghi.
+
+- toArray() , toJson() : chuyển  từ dạng Object sang dạng mảng hoặc kiểu dữ liệu Json.
+ví dụ: $students->toArray();
+
+-partition() : muốn chia collection thành 2 phần theo điều kiện nào đó,  
+ví đụ: list($greaterEqualFive , $lessFive) = $student-> partition(function ($student) { return $student -> point >=5;}); 
+kết quả trở về $greaterEqualFive sẽ chứa kết quar các student có điểm lớn hơn bằng 5, còn $lessFive sẽ chứa các student có điểm nhỏ hơn 5.

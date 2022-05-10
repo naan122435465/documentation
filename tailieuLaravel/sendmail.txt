@@ -1,0 +1,10 @@
+cài đặt lại cấu hình mail trong .env
+tại 1 mail trong file app/mail bằng câu lệnh
+php artisan make:mail <fielname>
+ trong file mail có 1 contructor và 1 hàm build 
+hàm khởi tạo nhớ để biến piublic để view có thể nhận được data.
+trong hàm build có thể setting cho email như from, view, with, attach, subjêct
+để gởi mail ta sử dụng Mail:to
+ví đụ:
+tạo hàm mail có tên là sendMail
+Mail::to($mailRece)->send(new SendMail())

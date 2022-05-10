@@ -1,0 +1,45 @@
+- filter_has_var(type, variable): check variable có tồn tại trong type(type: INPUT_GET,INPUT_POST,INPUT_COOKIE,INPUT_SERVER,INPUT_ENV) hay k
+- explode(separator,string,limit): cắt chuỗi thành một mảng
+- implode(separator,array): từ một mảngthành 1 string
+- join(separator,array): từ một mảng thành 1 string
+- lcfirst(string) chữ cái đầu tiên trong chuổi thành in thường
+- ucfirst() : chữ cái đầu tiên trong chuỗi đổi thành in hoa
+- strtoupper() : toàn bộ string thành in hoa
+- strtolower() : toàn bộ chuỗi thành in thường
+- ltrim(string,charlist): xoá ký tự charlist bên trái chuỗi
+- rtrim(): xoá ký tự charlist bên phải chuỗi
+- trim() : xoá ký tự charlist 2 bên chuỗi
+- number_format(number,decimals,decimalpoint,separator): định nghĩa format number
+- ord(string): hàm returm mã ASCII
+- parse_str(string,array): phân tích cú pháp của chuỗi. 
+vídụ parse_str("name=Peter&age=43",$myArray);print_r($myArray); sẽ trả về một mảng Array ( [name] => Peter [age] => 43 )
+- similar_text(string1,string2,percent): tính toán phần trăm giống nhau giữa 2 chuỗi
+-addcslashes(string,characters): add dấu gạch chéo(/) phía trước mỗi characters xuất hiện trong string
+-bin2hex(string): covert string thành mã ASCII
+-chop(string,charlist): remove charlist ra khỏi cuối của  string
+-chunk_split(string,length,end): add end vào string với length ký tự một end, nếu k chỉ rõ end thì mặt định  là khoảng trắng
+-explode(separator,string,limit): hàm chuyển string thành một mảng, mỗi một mảng đc tách bởi separator.key mặc định là numberic
+-implode(separator,array): trả lại một string từ các phần tử của mảng, các phần tử của mảng nối với nhau bởi separator
+-join(separator,array): trả lại một string từ các phần tử của mảng
+-trim(string,charlist) : remove charlist ở 2 bên chuỗi.
+-rtrim() : remove charlist bên phải chuỗi.
+- ltrim(): remove charlist bên trái chuỗi
+-md5(string,raw): chuyển string thành chuỗi mã MD5.
+-money_format() : return chuỗi theo format tiền tệ.
+-number_format(number,decimals,decimalpoint,separator) hàm định dạng format cho số.
+-parse_str(string,array): phân tích chuỗi
+-similar_text(string1,string2,percent): phần trăm giống nhau giữa 2 chuỗi. có phân biệt hoa thường
+-str_ireplace(find,replace,string,count): tìm và thay thế một số ký tự  trongg chuỗi trả lại số ký tự đc thay thế trong mảng, hàm này không phân biệt chữ hoa chữ thường
+-str_pad(string,length,pad_string,pad_type): add thêm ký tự trong chuỗi
+-str_repeat(string,repeat): tương tự hàm str_ireplace, tuy nhiên hàm này phân biệt hoa thường
+-str_split(string,length): hàm cắt chuỗi thành array.
+-str_word_count(string,return,char): hàm đếm từ trong chuỗi
+-strcasecmp(string1,string2): so sánh 2 chuỗi không phân biệt hoa thường
+-strcmp(string1,string2): so sánh 2 chuỗi có phân biệt hoa thường
+-strcspn(string,char,start,length): trả  lại vị trí char trong chuỗi.
+-strlen(string): trả lại độ dài của chuỗi
+
+-strpos(string,find,start): trả lại vị trí char trong chuỗi
+
+
+

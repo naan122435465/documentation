@@ -1,0 +1,49 @@
+-$_SERVER: biến siêu toàn cục: 
+	+$_SERVER['PHP_SELF']:trả lại filename hiện tại.
+	+$_SERVER['SERVER_ADDR']: trả lại địa chỉ ip.
+	+$_SERVER['SERVER_NAME']: trả lại tên host server.
+	+$_SERVER['REQUEST_METHOD']: trả lại tên method được request.
+	+$_SERVER['REQUEST_TIME']: thời gian request.
+	+$_REQUEST : trả lại 1 data sau khi submit từ html form.
+	+$_POST: gửi dữ liệu lên server dưới dạng ẩn thông qua HTTP Header nên bảo mật cao hơn, và dữ liệu gởi lên không bị giới hạn tuy nhiên  tốc độ truyền tải dữ liệu chậm hơn get
+	+$_GET : gửi dữ liệu lên server thông qua url nên bảo mật kém, và giới hạn 1024 ký tự
+
+-Cú pháp miêu tả 1 chuỗi regex:
+	+ / : bắt đầu và kết thúc 1 chuỗi regex.
+	+ ^ : bắt đầu của 1  chuỗi.
+	+ $ : kết thúc của 1 chuỗi.
+	+ . : bất kỳ ký tự nào ngoại trừ ký tự xuống dòng(\n).
+	+ * : ký tự trước có thể lặp lại 0 hoặc nhiều lần.
+	+ + : ký tự trước có thể lăọ lại 1 hoặc nhiều lần.
+	+ ? : ký tự trước có thẻ lặp lại 0 hoặc 1 lần.
+	+ \s : bất kì ký tự khoảng trắng.
+	+\S : không phải là khoảng trắng.
+	+ \S+ : một hoặc một số kí tự không phải khoảng trắng
+	+ \b :  từ biên.
+	+ \B : không phải từ biên.
+	+ | : phép or.
+	+ \ : biểu diễn một kí tự ngay sau bí từ kí tự đặc biệt thành kí tự thường va ngược lại.
+	+ [0-9] :  khớp một trong số từ 0-9.
+	+ [a-z] :  khớp một trong chữ từ a-z.
+	+ [abc] : có thể khớp với a,b, hoặc c.
+	+ [^abc] : khớp với bất kì ký tự nào ngoài a,b,c( nếu ^ xuất hiện đầu tiên sau ngoặc vuông, nó có nghĩa phủ định.
+	+ \d : số bất kì.
+	+ \D : kí tự không phải là số.
+	+ \w : kí tự chữ( thay thế cho [a-zA-Z0-9].
+	+ \W : kí tự không phải chữ.
+	+ \b : thay thế cho [a-zA-Z0-9_]
+	+ {X} : xuất hiện X lần.
+	+ {X,Y} : xuất hiện trong khoảng X tới Y lần.
+	+ x(?=y) : chỉ khớp x nếu ngay sau x là y.
+	+ x(?!y) : chỉ khớp x nếu ngay sau x không phải là y.
+-preg_match($pattern, $subject, $matches) : data khớp kho so sánh 2 chuỗi.
+	+ $pattern là chuỗi Regex Pattern.
+	+ $subject là chuỗi nguồn để chúng .
+	+ $matches là danh sách kết quả trả về đúng khi so khớp 2 chuỗi trên.
+-preg_filter(pattern, replacement, input, limit, count): tìm trong chuỗi input có chưá pattern và thay thế chúng. 
+-preg_grep(pattern, input, flags): trả lại mảng trong input có chưa patterrn .
+-preg_match_all(pattern, input, matches, flags, offset) : trả lại mảng với chứa các chuỗi trùng với patttern có trong input.
+-preg_replace(patterns, replacements, input, limit, count): trả lại mảng được thây thế pattern bằng replacement.
+-preg_split(pattern, string, limit, flags): cắt chuỗi tại  mỗi pattern.
+
+

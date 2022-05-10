@@ -1,0 +1,47 @@
+-fopen(filename, mode, include_path, context): mở file trong đó mode gồm:
+	+  "r" - Read only. Starts at the beginning of the file.
+	+ "r+" - Read/Write. Starts at the beginning of the file.
+	+ "w" - Write only. Opens and truncates the file; or creates a new file if it doesn't exist. Place file pointer at the beginning of the file.
+	+ "w+" - Read/Write. Opens and truncates the file; or creates a new file if it doesn't exist. Place file pointer at the beginning of the file.
+	+ "a" - Write only. Opens and writes to the end of the file or creates a new file if it doesn't exist.
+	+ "a+" - Read/Write. Preserves file content by writing to the end of the file.
+	+ "x" - Write only. Creates a new file. Returns FALSE and an error if file already exists.
+	+ "x+" - Read/Write. Creates a new file. Returns FALSE and an error if file already exists.
+	+ "c" - Write only. Opens the file; or creates a new file if it doesn't exist. Place file pointer at the beginning of the file.
+	+ "c+" - Read/Write. Opens the file; or creates a new file if it doesn't exist. Place file pointer at the beginning of the file.
+	+ "e" - Only available in PHP compiled on POSIX.1-2008 conform systems.
+-fclose(filepointer): đóng file.
+-fwrite(file, string, length): ghi file.
+-fread(file, length): đọc file.
+-filesize(filename): tính độ dài của file.
+-fgetc(file): return từng chữ cái.
+-fgets(file, length): return từng dòng.
+-basename(path, suffix): lấy tên file từ đường dẫn.
+-chmod(file, mode): cấp quyền truy cập cho file.
+-chgrp(file, group): thay đổi nhóm người dùng cho file.
+-chown(file, owner): thay đổi chủ sở hữu cho tệp.
+-copy(from_file, to_file, context): copy file
+-unlink(filename, context): xoá file.
+-dirname(path, levels): lấy đường dẫn chứa file mà xoá đi tên file.
+-feof(file): kiểm tra xem cuối file hay chưa.
+-file(filename, flag, context): đọc file theo mảng.
+-file_exists(path): check file có tồn tại không.
+-file_get_contents(path, include_path, context, start, max_length): đọc nội dung file.
+-file_put_contents(filename, data, mode, context): viết 1 data vào file.
+-fgetcsv(file, length, separator, enclosure): đọc từng dòng file csv.
+-fputcsv(file, fields, separator, enclosure, escape): ghi file dạng csv.
+-fseek(file, offset, whence): hàm di chuyển con trỏ đến vị trí offset.
+-ftell(file): return vị trí hiện tại của con trỏ.
+-ftruncate(file, size): cắt bớt file.
+-is_dir(file): check file có trong thư mục hay không.
+-is_uploaded_file(file): check tệp có đc tải lên bằng HTPP Post k.
+-mkdir(path, mode, recursive, context): tạo thư mục chỉ tới đường dẫn.
+-move_uploaded_file(file, dest): move file .
+-parse_ini_string(ini, process_sections, scanner_mode): phân tích cú pháp trong file.
+-pathinfo(path, options): trả lại thông tin đường dẫn của file theo arry.
+-realpath(path): trả lại đường dẫn tuyệt đối của file
+-rename(old, new, context): đổi tên file.
+-rewind(file): đưa con trỏ trở lại đầu file.
+-rmdir(dir, context): loại bỏ một thư mục rổng
+-set_file_buffer(file, buffer): chỉ định số byte cho file.
+-stat(filename): trả lại thông tin của file

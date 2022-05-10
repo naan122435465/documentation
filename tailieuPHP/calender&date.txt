@@ -1,0 +1,14 @@
+- cal_days_in_month(calendar,month,year): trả lại về số ngày trong tháng.
+- jddayofweek(jd,mode): trả về ngày trong tuần.
+- jdmonthname(jd,mode): trả về tháng tên tháng trong năm
+- date_add(object, interval): add vài ngày, tháng, năm  vào date
+- date_diff(datetime1, datetime2, absolute): so sánh giữa 2 datetime trả về true or false, muốn trả về số ngày tháng năm chênh lệch thì thêm format ví dụ trả về năm: date_diff(datetime1, datetime2)->format("%y");
+- date_format(object, format): tạo format cho date
+- date_get_last_errors(): trả lỗi về date
+- date_interval_create_from_date_string(datetime): tạo 1 chuỗi thành dạng date
+- date_modify(object, modify): thêm thời gian  như thêm 15 ngày ...
+- date_parse(date): trả về một mảng gồm các thông tin chi tiết
+- date_sub(object, interval): trừ ngày
+- date(format, timestamp): trả về chuỗi ngày theo định dạng format
+- getdate(timestamp): trả lại mảng array của timestamp
+

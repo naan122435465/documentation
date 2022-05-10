@@ -1,0 +1,34 @@
+các job được thực hiện sẽ được lưu trữ trong databasê.
+câu lệnh tạo bảng lưu trữ  trong database như sau:
+php artisan queue:table
+php artisan queue:failed-table
+
+thiết lập trong file .env 
+QUEUE_DRIVER=database
+
+tạo thư mục job trong file app bằng câu lệnh
+php artisan makee:job <filename>
+
+class này sễ chứa 1 contrutor và 1 hàm xử lý handle.
+
+ví dụ 
+public function handle()
+    {
+        $email = new WelcomeEmail();
+        Mail::to('info@larashout.com')->send($email);
+    }
+hàm gởi mail.
+
+để sử dụng job thì trong class cần sử dụng ta dùng  phương thức dispatch().
+ví dụ ta tạo 1 job tên là SendEmailJob.
+thì khi gọi như sau: dispatch(new SendEmailJob());nếu muốn gởi email sau một thời gian nhất định thì sử dụng hàm delay(). 
+ví dụ delay 5 phút: $emailJob = new SendWelcomeEmail()->delay(Carbon::now()->addMinutes(5));
+        dispatch($emailJob);
+ở đây ta dùng thư viện Carbon để xử lý delay 5 phút.
+để  thực thii các job có trong hàng đợi chạy bằng câu lệnh:
+php ảtían queue:work
+câu lệnh này khi đã thực hiện sẽ chạy cho đến khi đóng cửa sổ dòng lệnh hoặc dừng nó bằng một câu lệnh.
+queue ửokẻ là các tiến trình có thời gian sống dài do đó nó sẽ không cập nhập code khi có thay đổi,
+khởi động lại queue worker bằng câu lệnh
+php artisan queue:restart
+

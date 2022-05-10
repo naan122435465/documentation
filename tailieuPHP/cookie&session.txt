@@ -1,0 +1,10 @@
+-Cookie là một đoạn văn bản ghi thông tin được tạo ra và lưu trên trình duyệt của máy người dùng. 
+Cookie thường được tạo ra khi người dùng truy cập một website, cookie sẽ ghi nhớ những thông tin như tên đăng nhập, mật khẩu, theme của website, ngôn ngữ
+các tuỳ chọn do người dùng lựa chọn đi kèm. Các thông tin này được lưu trong máy tính để nhận biết người dùng khi truy cập vào một trang web.
+Dữ liệu cookie có sẵn trong trình duyệt của chúng ta đến khi hết hạn.
+
+-Session Là phiên làm việc để lưu trữ 1 biến và biến đó có thể tồn tại từ trang này đến trang khác(cùng tên miền)
+Session được lưu trữ trên server, tốn ram của server
+Thời gian sống của nó sẽ kết thúc khi ta xoá nó hoặc hết tuổi thọ (tắt trình duyệt)
+Mỗi session sẽ có một SessionID riêng biệt. khi kết thúc một session và bắt đầu một session mới thì sẽ có một SessionID khác. giá trị của SessionID được lưu vào trong cookie giúp 
+cho sever biết session này của client nào. session phụ thuộc vào SessionID được lưu ở cookie
