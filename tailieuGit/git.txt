@@ -1,0 +1,23 @@
+1,  git init : khởi tạo 1 git repository 1 project mới hoặc đã có.
+2, git clone <:clone git url:> copy 1 git repository từ remote source.
+3, git status : để check trạng thái của những file bạn đã thay đổi trong thư mục làm việc. ví dụ : tất cả các thay đổi cuối cùng từ lần commit cuối cùng.
+5, git ađ : thêm thay đổi đến stage/index trong thư mục làm việc.
+6, git commit -m "messenger" : là một action để git lưu lại một snapshot của các sự thay đổi trong thư mục làm việc. và các tập tin , thư mục được thay đổi đã phỉa nằm trong staging area.
+mỗi lần commit nó sẽ được lưu lại lịch sữ chỉnh sửa của code kèm theo tên và địa chỉ email của người commit. ngoài ra trong git cũng có thể khôi phục lại tập tin trong lịch sữe commit của
+để chia cho một branch khác.
+7, git push/git pull : push hoặc pull các thay đổi đến remote. nếu bạn đã added và committed các thay đổi và bạn muốn đẩy nó lên hoặc remote của bạn đã update và bạn apply tất cả thay đổi
+trên code của mình.
+git pull <remote> <branch>
+git push <remote> <branch>
+git push origin master : để đẩy các thay đổi đến nhánh chính.
+8, git branch : liệt kê tất cả các branch
+9, git checkout <branch>  : chuyển sang branch khác.
+10, git stash : lưu những thay đổi mà bạn không muốn commit ngay lập tức.
+11, git merge < branch muôn merge> : merge 2 branch lại với nhau.
+12 git reset HEAD ten_file : bạn đã đưa một tập tin nào đó vào Staging Area nhưng bây giờ bạn muốn loại bỏ nó ra khỏi đây để không phải bị commit theo.
+13, git remote : để check remote/ source bạn có hoặc add thêm remote.
+git remote để kiểm tra và liệt kê
+git remote ađ < remote url> để thêm .
+14, git add : để đưa 1 tập tin vào Staging Area 
+git add tên_file : để đửa 1 tập tin.
+git add all hoặc git add . : để đưa tất cả các thư mục vào.

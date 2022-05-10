@@ -1,0 +1,32 @@
+- toán tử điều kiện (? : )
+bien x = (bieu thuc) ? giatri1 : giatri2 : nếu bieu thuc true thì x = giá trị 1, sai thì x = gia trị 2.
+- toán tử instanceof chỉ được sử dụng cho các biến tham chiếu đối tượng. kiểm tra xem có phải hay không đối tượng là một kiểu cụ thể. 
+ví dụ : String name = "Doan";
+      // Duoi day se tra ve true neu name la mot kieu String
+      boolean result = name instanceof String;  
+ví dụ2 :  Animal a = new Dog();
+      boolean result =  a instanceof Dog;
+      System.out.println( result );
+lệnh break: ngừng toàn bộ vong lặp.
+lệnh continue : dừng vong lặp hiển tại nhảy tiếp vòng tiếp theo
+==============================================
+CÁC PHƯƠNG THỨC THUỘC LỚP NUMBER.
+- xxxValue() ví dụ như: intValue(), floatValue(),....biến đổi giá trị của đối tượng Number này thành kiểu dữ liệu xxx.
+- compareTo() so sanh đối tượng này với tham số. trả về 0 nếu bằng nhau. trả về 1 nếu tham số bé hơn giá trị đối tượng, ngược lại là -1.
+ví dụ : Integer a = 5;
+int x = a.compareTo(5);//  Trả về 0
+- equals() : kiểm tra đối tượng có bằng tham số không, bằng là true ngược lại false.
+ví dụ : Float a = 6.5f;
+boolean x = a.equals(6.5f) ;// Trả về true.
+- toString() : trả về đối tượng string.
+Integer.parseInt(String s) : trả về giá trị int của một chuỗi.
+- abs() trả về giá trị tuyệt đối
+- rint() làm tròn số về gá trị interger gần nhất với giá trị tham số, trả về dạng double.
+- min() trả về giá trị nhỏ nhất giữa 2 số, 
+- max() trả về lớn nhát giữa 2 số,
+- valueOf(): tra về một đối tượng interger giữ giá trị gốc đã xác định.
+- floor() trả về số int lớn nhất mà nhỏ hơn hoặc bằng tham số, dang double
+- ceil() trả về số int nhỏ nhất mà lớn hơn hoặc bằng tham số, dạng double.
+-random() trả về một số ngẫu nhiên
+
+	

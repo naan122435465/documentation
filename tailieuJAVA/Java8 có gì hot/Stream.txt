@@ -1,0 +1,22 @@
+- Stream(luồng) là một đối tượng mới của java giúp cho việc thao tác trên collection và array trở nên dễ dàng hơn.
+- phương thức: 
+	+ stream(): trả về một stream sẽ được xử lý theo tuần tự. 	
+	+ parallelStream(): trả về một Stream song song, các xử lý sẽ thực hiện song song.
+- phương thức:
+	+ filter(): loại bỏ các phần tử dựa trên tiêu chí nhất định  ví dụ : stream().filter(number -> number % 3 == 0)
+	+ skip(), limit(): giới hạn size của stream.
+	+ map(): dùng để ánh xạ các phần tử tới kết quả tương ứng. ví dụ: stream().map(String::toUpperCase)
+	+ sorted() : giúp sắp xếp các phần tử theo thứ tự xác định ví dụ: .sorted((s1, s2) -> s1.length() - s2.length())
+	+ foreach(): duyệt qua các phần tử của stream. 
+		ví dụ: Stream.iterate(1, count -> count + 1) //
+                .filter(number -> number % 3 == 0) //
+                .limit(6) //
+                .forEach(System.out::println);
+	+ collect() giúp thu thập kết quả stream sang một collection mới.
+	+ anyMatch(): trả về một boolean tùy thuộc vào điều kiện được áp dụng trên Stream dữ liệu. Phương thức này trả về true ngay khi phần tử đầu tiên thõa mãn điều kiện, những phần tử 
+	còn lại sẽ không được kiểm tra.
+	+ allMatch() : Phương thức này trả về true nếu tất cả phần tử đều thõa mãn điều kiện. Nếu một phần tử không thõa điều kiện, những phần tử còn lại sẽ không được kiểm tra.
+	+ noneMatch() : Ngược lại với allMatch(), pương thức này trả về true nếu tất cả phần tử đều không thõa mãn điều kiện. Nếu một phần tử thõa điều kiện, những phần tử còn lại sẽ không
+	được kiểm tra.
+	+ count() : trả về tổng số phần tử cho dữ liệu luồng.
+	+ Stream.max(), Stream.max() chấp nhận đối số là một Comparator sao cho các item trong stream có thể được so sánh với nhau để tìm tối thiểu (min) hoặc tối đa (max).

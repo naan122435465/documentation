@@ -1,0 +1,24 @@
+có 3 kiểu biến: biến cục bộ( local), thuộc tính ( biến của instance- đối tượng) và biến static.
+1. biến local:  
+	- được khai báo trong các phương thức, contructor, hoặc khối.
+	- chỉ được thực thi nội bộ.
+	- không có giá trị mặc định nào cho các biến  local vì thế các biến local nên được khai báo và một giá trị khởi tạo nên được gán trước khi sử dụng. nếu không gán giá trị sẽ tạo một
+	lỗi tại thời gian biên dịch.
+	- được tạo khi tạo phương thức, costructor hoặc khối, và bị huỷ khi các phương thức, constructor, khối kết thúc.
+
+2. thuộc tính ( hay biến instance) :
+	- các thuộc tính được khai báo trong một lớp, nhưng ở bên ngoài một phương thức, constructor hoặc bất kỳ khối nào. 
+	- các thuộc tính có các giá trị mặc định. với các số giá trị mặc định là 0, với boolean là false , đối tượng là null. các giá trị có thể được gán trong khi khai báo hoặc trong constructor.
+	- tên sử đầy đủ hợp lệ: ObjectReference.VariableName.
+	- được tạo khi một đối tượng đc tạo bởi sử dụng từ khoá new và bị huỷ khi huỷ đối tượng
+3. các biến Class/Static: 
+	- các biến static được khai báo với từ khoá static trong một lớp, nhưng ở bên ngoài một phương thức, constructor hoặc một khối.	
+	- sẽ chỉ có một bản sao của mỗi biến class cho mỗi lớp.
+	- thường được sử dụng cho khai báo các hằng số. các hằng số là các biến , mà được khai báo như là các biến static, biến final, biến chung/ riêng. các biến hằng số không bao giờ thay
+	đổi từ giá trị khởi tạo của chúng.
+	- được tạo khi chạy chương trình và huỷ khi chương trình kết thúc.
+	- các biến static có thể được truy cập bởi việc gọi tên lớp: ClassNam.VariableName.
+============================================================================================================================================================================
+Có 2 kiểu dữ liệu có sẵn trong JAVA: kiểu dữ liệu gốc (Primitive) và kiểu dữ liệu tham chiếu/ đối tượng (Non-Primitive)
+1. kiểu dữ liệu gốc: 8 kiêu:  char(kích thước 2 byte(16bit)), boolean, byte, short, int, long, float, double.
+2. kiểu dữ liệu Object : các biến đối tượng được tạo bởi sử dụng các construtor đã được định nghĩa của các lớp. chúng được sử dụng để truy cập các đối tượng.

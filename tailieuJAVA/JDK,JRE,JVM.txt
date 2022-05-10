@@ -1,0 +1,6 @@
+JVM (Java Virtual Machine) là một thiết bị trừu tượng ảo, có thể giúp máy tịnh chạy các chương trình Java.
+JVM thực hiện các tác vụ chính sau:
+- tải code
+- kiểm tra code
+- thực thi code
+- cung cấp môi trường runtime.

@@ -1,0 +1,50 @@
+Lớp java.util.Date
+- các contructor:
+	+ Date() : tạo ra một đối tượng Date đại diện cho ngày tháng và thời  gian hiện tại.
+	+ Date(long milliseconds) : tạo một đối tượng Date trong một mili giây cho trước kể từ ngày 1 tháng 1 năm 1970 , 00:00:00 GMT.
+- các phương thức:	
+	+ boolean after(Date date) : kiểm tra nếu ngày hiện tại là sau ngày đã cho.	
+	+ boolean before(Date date) : kiểm tra nếu ngày hiện tại trước ngày đã cho
+	+ Object clone() : trả về đối  tượng nhân bản của ngày hiện tại.
+	+ int compareTo(Date date): so sánh ngày hiện taị với ngày đã cho.
+	+ boolean equals(Date date) : so sánh ngày hiện tại với ngày đã cho.
+	+ static Date from(Instant instant) : trả về một thể hiện của đối tượng date từ ngày instant.
+	+ long getTime(): trả về thời gian được đại diện bởi đối tượng date.
+	+ int hashCode() : trả về mã băm cho đối tượng ngày này.
+	+ void seTime(long time) : thay đối ngày hiện tại và thời gian cho thời gian đã cho.
+	+ Instant toInstant(): chuyển đổi date hiện tại thành đối tượng Instant.
+	+ String toString() : chuyển đổi date hiện tại thành chuỗi String.
+=========================================================================================================================================================
+lớp java.sql.Date 
+- Constructor: 
+	+ Date(long miliseconds):  Tạo đối tượng sql Date với mili giây đã cho tính từ ngày 1 tháng 1 năm 1970, 00:00:00 GMT.
+- các phương thức:
+	+ void setTime(long time) : Thay đổi sql date hiện tại với time đã cho.
+	+ instant toInstant(): Chuyển đổi sql date hiện tại thành đối tượng Instant.
+	+ LocalDate toLocalDate : chuyển đổi sql date hiện tại thành đối tượng LocalDate.
+	+ String toString: chuyển đối sql date hiện tại thành chuỗi String.
+	+ static Date valueOf(LocalDate date): trả về đối tượng sql date cho LocalDate đã cho.
+	+ static Date valueOf(String date) : trả về đối tượng sql date cho chuỗi date đã cho.
+=================================================================================================================================================================================
+Lớp Calendar : là một lớp  trừu tượng cung cấp phương thức chuyển đổi ngày giờ một thời điểm cụ thể theo thời gian và một tập hợp các trường của calendar như MONTH, YEAR, HOUR..
+Nó kế thừa lớp Object và implements giao diện Comparable.
+- abstract void add(int field, int amount) : được sử dụng để thêm hoặc trừ số lượng thời gian nhất định vào trường calendar đã cho dựa trên các quy táct calendar.
+- int get(int field) : được dùng để trả lại giá trị của trường calendar đã cho.
+- static Calendar getIntstance() : dùng đẻ lấy calendar sử dụng time zone và locale mặc định.
+- abstract int getMaximum(int field) : trả về giá trị max cho trường calendar đã cho của thể hiện calendar hiện tại.
+- abstract int getMinimum(int field) : trả về giá trị min cho trường calendar đã cho của thể hiện calendar hiện tại.
+- void set(int field, int value) : để thiết lập trường cho trước với giá trị đã cho.
+- void setTime(Date date) : để thiết lập time của Calendar với Date đã cho.
+- Date getTime() : trả về đối tượng Date biễu diễn giá trị time của Calendar.
+======================================================================================================================================================
+Lớp TimeZone
+- static String[] getAvailableIDs() : để nhận được tất cả các ID có sắn được hỗ trợ.
+- static TimeZone getDefault(): để lấy TimeZone mặc định cho máy chủ hiện tại.
+- String getDisplayName(): rả về tên của múi giờ phù hợp để trình bày cho người dùng ở vùng miền mặc định.
+- String getID():lấy ID của múi giờ hiện tại.
+- int getOffset(long date):  trả về offset của múi giờ này từ UTC tại một date nhất định.
+- void setID(String ID):để thiết lập ID cho múi giờ hiện tại. 
+====================================================================================================================================================
+DateFormat
+SimpleDateFormat.format() :được sử dụng để chuyển đổi thành date thành string.
+SimpleDateFormat.parse(): 

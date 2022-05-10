@@ -1,0 +1,22 @@
+- Một bean là một đối tượng được khởi tạo, lắp ráp, và được quản lý bởi một Spring IoC container. các bean này được tạo ra bằng siêu dữ liẹu cấu hình mà bạn cung cấp cho container
+ví dụ dưới dạng định nghĩa XML<bean/>
+- Định nghĩa Bean chứa các thông tin được gọi là siêu dữ liệu cấu hình, mà cần thiết cho container để biết những điều sau đây:
+	+ làm thế nào để tạo ra một bean.	
+	+ chi tiết vòng đời của bean.
+	+ phụ thuộc ( dependence) của bean.
+- tất cả các siêu dữ liệu cấu hình ở trên chuyển thành một các tập tính sau được sử dụng để định nghĩa bean.
+- Thuộc tính:
+	+ class: thuộc tính này bắt buộc và chỉ định lớp được sử dụng để tạo ra bean.
+	+ name : thuộc tính này chỉ định duy nhất nhận dạng bean. trong dữ liệu cấu hình dựa trên xml sử dụng các thuộc tính id và (hoặc) name để chỉ định bean duy nhất.
+	+ scope: thuộc tính này xác định phạm vi của các đối tượng được tạo ra từ một định nghĩa bean cụ thể.
+	+ constructor-arg: thuộc tính này được sử dụng để bơm các phụ thuộc.(dependency)
+	+ properties: thuộc tính này được sử dụng để bơm các phụ thuộc (dependency)
+	+ chế độ autowiring : thuộc tính này được sử dụng để bơm các phụ thuộc (dependency).
+	+ chế độ lazy-initialization: thuộc tính này nói IoC container biết được rằng đối tượng này được tạo ra tại thời điểm được request, chứ không phải lúc khởi động.
+	+ phương thức initialization : một callback được gọi ngay sau khi tất cả các phụ thuộc tính cần thiết trên bean đã được thiết lập bởi container.
+	+ phương thức destruction: một callback được sử dụng khi container chứa bean bị huỷ.
+- phạm vi của bean: 
+	+ singleton : đây là phạm vi mặc định, chỉ tạo ra một thể hiện duy nhất của bean này trên toàn bộ ứng dụng.
+	+ prototype: tạo ra một thể hiện mới của bean mỗi khi cần thiết. 
+	+ request: phạm vi này định nghĩa một bean cho một http request, chỉ có giá trị trong ngữ cảnh của một ứng dụng Spring Web.
+	+ global-session: phạm bi này định nghĩa một bean cho một global HTTP session. chỉ có giá trị ngữ cảnh của một ứng dụng Spring Web.

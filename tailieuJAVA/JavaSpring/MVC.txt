@@ -1,0 +1,20 @@
+MÔ HÌNH MVC: 
+- Model : Các cáu trúc dữ liệu toàn chương trình, có thể đại diện cho trạng thái của dụng.\
+- View : lớp giao diện, dùng để hiển thị dữ liệu ra cho user xem và tương tác.
+- Controller: kết nối giữa Model và View, điều khiển dòng dữ liệu.
+
+
+-----------------------------------------------------------------
+MÔ HÌNH 3 LỚP( THREE TIER)
+- Presentaton layer: tầng này tương tác vơi người dùng bằng view, controller hoặc API.
+- Business logic layer: chứa toàn bộ logic của chương trình
+- Data access layer : tương tác với database, trả về kết quả cho tầng business logic.
+Một số thành phần đại diện cho từng lớp: 
+- service: chứa các business logic code .
+- Repository
+
+--------------------------------------------
+ Áp dụng cho Spring Boot sẽ kết hợp mô hình 3 lớp và MVC:
+- Controller : trả về View ( có chứa data sẵn , dạng HTML) hoặc Model thể hiện dưới dạng API cho View.
+- Service: chứa các code tính toán, xử lý. khi Contraller yêu cầu thì Service tương ứng sẽ tiếp nhận và cho ra dữ liệu trả cho Controller(trả về Model). Controller sẽ gửi về View.
+- Repository : Service còn có thể tương tác với Service khác, hoăc dùng Repository để gọi DB. Repository trực tiếp tương tác, đọc ghi dữ liệu trong DB và trả cho service.

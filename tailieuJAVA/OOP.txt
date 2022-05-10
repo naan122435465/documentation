@@ -1,0 +1,31 @@
+- Đối tượng : đối tượng có các trạng thái và hành vi.
+- lớp: một lớp được định nghĩa như một bản thiết kế, mẫu có thể mô tả các trạng thái hành vi của đối tượng mà nó hỗ trợ.
+- phương thức: là một hành vi, một lớp có thể bao gồm nhiều phương thước.
+- biến: mỗi đối tượng có một tập các biến duy nhất. mỗi trạng thái của đối tượng được khởi tạo bởi các giá trị và gán với những biến.
+Quy ước đặt tên:
+- tên Class nên viết hoa chữ các đầu tiên và là một danh từ.
+- tên Interface bắt đầu với chữ hoa và là một tính từ.
+- tên Phương thức nên bắt đầu bằng chữ viết thường và là một động từ.
+- tên Biến nên bắt đầu với chữ thường.
+- tên package nên bắt đầu với chữ thường.
+- tên hàng nên bắt đầu với chữ hoa. ví dụ: RED, MAX_PRIORITY....
+- tên chương trình giống hệt tên class.
+khi lưu file nên thêm hậu tố .java.
+- định danh trong java:
+ tất cả các thành phần của java đều yêu cầu tên. tên được sử dụng với các class, biến cũng như phương thức được gọi là Định danh (Identifier).
+tất cả các idenfier nên bắt đầu với một chữ cái , ký tự $ hoặc ký tự_.
+
+- tính thừa kế trong java:  các class có thể được suy ra từ các class khác. tái sử dụng các trường và các phương thức của class đang tồn tại mà không cần phải viết lại code trong class mới, 
+class đang tồn tại được gọi là superclass và class được suy ra gọi là subclass.
+- interface trong java: interface định nghĩa các phương thức mà các subclass nên sử dụng. nhưng sự thực thi của các phương thức lại hoàn toàn do các subclass.
+============================================================================================================================================================
+- STATIC:
+từ khoá static trong java được sử dụng chính để quản trị bộ nhớ.
+- biến static : 
+	+ biến static được gọi là biến tĩnh
+	+ dùng để tham chiếu thuộc tính chung của tất cả đối tượng (mà không là duy nhất cho mỗi đối tượng). 
+	+ giúp tiết kiệm bộ nhớ chương trình.
+	+ biến static lấy bộ nhớ chỉ một lần trong class area tại thời gian tải lớp đó.
+- phương thức static : 
+	+phương thức static thuộc lơp chứ không phải đối tượng của lớp.
+	+ phương thức static có thể truy cập thành viên dữ liệu static mà không cần tạo một instance. 

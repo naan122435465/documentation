@@ -1,0 +1,8 @@
+Stream.collect() là mộp trong các phương thức đầu cuối của StreamAPI trong Java 8. cho phép thực hiện các thao tác có thể thay đổi trên các phần tử được lưu giữ trong Stream.
+Một số phương thức có sẵn để xử lý các phần tử của Stream API( trong lớp java.util.stream.Collectors):
+	- Collectors.toList(): dùng để thu thập tất cả các phần tử Stream vào một List(kết quả luôn là ArrayList).
+vd: 	
+List<String> result = list.stream().collect(Collectors.toList());
+
+	- Collectors.toSet(): dùng để thu thập tất cả các phẩn tử Stream vào một Set(kết quả luôn là HashSet)
+

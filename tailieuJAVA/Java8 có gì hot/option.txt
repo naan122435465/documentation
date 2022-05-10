@@ -1,0 +1,2 @@
+Optional trong Java 8 là một Container object, nó bao bọc (warpper) một object, object này có thể present hoặc không. Khi object là null thì Optional trả về empty. 
+Đặc biệt Optional hỗ trợ lambda expression.

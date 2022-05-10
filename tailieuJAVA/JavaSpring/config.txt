@@ -1,0 +1,42 @@
+Spring Boot cung cấp SpringApplication class để khởi động cho ứng dụng Spring từ hàm main() sử dụng static method SpringApplocation.run: 
+- @SpringBootApplication là một annotation tiện ích, nó tương đương với việc ta thêm các annotation
+	+ @Configuration gán class này thành một bean của application context.
+	+ @EnableAutoConfiguration 
+	+ @EnableWebMvc
+	+ @ComponentScan
+=================================================================================================================================================================
+SPRING BOOT APPLICATION PROPERTIES
+- Hầu hết các config ( server- portt, database connection, mail config...) trong Spring Boot đã được cấu hình sẵn tuy nhiên chúng ta vẫn có thể cài đặt lại nó thông qua file application.properttiess
+- các tham số hay dùng để cấu hình Spring Boot: 
+	+ spring.banner.charset : (default value: UTF-8) cài đặt banner file encoding
+	+ spring.banner.location : (spring.application.admin.enabled: classpath:banner.txt):Cài đặt banner file location. 
+	+ logging.file: Cài đặt log file name. For example data.log.
+	+ spring.application.index : Cài đặt application index.
+	+ spring.application.name : Cài đặt application name.
+	+ spring.application.admin.enabled : (default value: false) Dùng để enable admin features for the application.
+	+ spring.config.location : Dùng để config file locations.
+	+ spring.config.name : (default value:	application) Cài đặt config file name.
+	+ spring.mail.default-encoding : (default value:UTF-8) Cài đặt default MimeMessage encoding.
+	+ spring.mail.host: Cài đặt SMTP server host. For example smtp.example.com.
+	+ spring.mail.password: Cài đặt login password of the SMTP server.
+	+ spring.mail.port : Cài đặt SMTP server port.
+	+ spring.mail.test-connection: (default value: false)Dùng để test that the mail server is available on startup.
+	+ spring.mail.username : Cài đặt login user of the SMTP server.
+	+ spring.main.sources: Cài đặt sources for the application.
+	+ server.address :Cài đặt network address to which the server should bind to. 
+	+ server.connection-timeout : Cài đặt time in milliseconds that connectors will wait for another HTTP request before closing the connection.
+	+ server.context-path: Cài đặt context path of the application.
+	+ server.port :(default value:8080) : Cài đặt HTTP port.
+	+ server.server-header: It is used for the Server response header (no header is sent if empty)
+	+ server.servlet-path : (default value:/)Cài đặt path of the main dispatcher servlet
+	+ server.ssl.enabled : Dùng để enable SSL support.
+	+ spring.http.multipart.enabled: (default value: true) Dùng để enable support of multi-part uploads.
+	+ spring.http.multipart.max-file-size: (default value:1MB):  Cài đặt max file size.
+	+ spring.mvc.async.request-timeout: Cài đặt time in milliseconds.
+	+ spring.mvc.date-format : Cài đặt date format. For example dd/MM/yyyy.
+	+ spring.mvc.locale : Cài đặt locale for the application.
+	+ spring.social.facebook.app-id : Cài đặt application’s Facebook App ID.		
+	+ spring.social.linkedin.app-id : Cài đặt application’s LinkedIn App ID.
+	+ spring.social.twitter.app-id: Cài đặt application’s Twitter App ID.
+	+ security.basic.authorize-mode : (default value: role) : Cài đặt security authorize mode to apply.
+	+ security.basic.enabled : (default value: true) Dùng để enable basic authentication.

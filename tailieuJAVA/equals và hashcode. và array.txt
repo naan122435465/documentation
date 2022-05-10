@@ -1,0 +1,22 @@
+- phương thức equals() dùng để so sánh 2 đối tượng với nhau.  
+- phương thức contains(object) của interface List trong java có thể được sử dụng để kiểm tra nếu đối tượng được chỉ định tồn tại trong danh sách. 
+- phương thức hashCode() :
+	+ cú pháp: public native int hashCode() 
+- mảng là một tập hợp các phần tử có cùng kiểu được lưu trữ gần nhau trong bộ nhớ. mảng trong java chỉ có thể lưu trữ một tập các phần tử có số lượng phần tử cố định.
+- arrayname.length : để biết số lượng phần tử trong một mảng.
+- Array.sort(arrayNa,e): sắp xếp mảng.
+- System.arraycopy(): dùng để sao chép 1 mảng.
+- phương thử xử lý array trong lớp java.util.Arrays:
+	+ pubic static int binarySearch(Object [] a, Object key) : tìm kiếm mảng của object đã cho với giá trị đã xác định bởi thuật toán tìm kiếm nhị phân mảng này phải được xếp thứ tự 
+	trước khi gọi phương thức này. nó trả về chỉ mục của từ khoá tìm kiếm.
+	+ public static boolean equals( long[] a, long[] a2) : trả về true nếu hai mảng long đã cho cân bằng nhau. hai mảng này được cho là cân bằng nếu cả hai mảng chứa cùng một số lượng
+	phần tử và tất cả các cặp phần tử tương ứng của hai mảng là bằng nhau.
+	+ public static void fill(int[] a, int[] val) gán giá trị đã cho tới mỗi phần tử của mảng int đã cho.
+	+ public static void sort(Object [] a) : xắp xếp thứ tự mảng các đối tượng đã cho theo thứ tự tăng dần theo thứ tự tự nhiên của các phần tử.
+=======================================================================================================================================================================
+LỚP WRAPPER: cung cấp cơ chế chuyển đổi kiểu dữ liệu nguyên thuỷ thành kiểu dữ liệu đối tượng và ngược lại.
+==============================================================================================================================================================
+instanceof: dùng để kiểm tra một đối tượng có phải là thể hiện của một kiểu dữ liệu cụ thể không( lớp, lớp con, interface)
+- interfaceof là toán tử so sánh vì nó so sánh thể hiện với kiểu dữ liệu. Nó trả về giá trị boolean là true hoặc false. nếu dùng toán tử instanceof với bất kỳ biến nào có giá trị null. giá 
+trị trả về là false.
+- downcasting với toán tử instanceof : khi kiểu của lớp con tham chiếu tới đối tượng của lớp cha gọi là downcasting.

@@ -1,0 +1,42 @@
+TÍNH KẾ THỪA
+- tính kế thừa trong java là sự liên quan giữa 2 class với nhau, trong đó có class cha (superclass) và class con(subclass).khi kế thừa class con được hưởng tất cả các phương thức và thuộc tính của class cha. tuy 
+nhiên nó chỉ được truy cập các thành viên public và protected của class cha, nó không được phép truy cập đến thành viên private của class cha.
+- cú pháp kế thừa 
+	class Subclass-name extends Superclass-name {
+	///method
+	}
+- các kiểu kế thừa:
+	+kế thừa đơn
+	+ kế thừa nhiều cấp
+	+ kế thừa thứ bậc
+======================================================================================================================================================
+TÍNH ĐA HÌNH 
+-có 2 kiểu đa hình: 
+	+ đa hình lúc biên dịch (compile) 
+	+ đa hình luc thực thi (runtime)
+- phương pháp nạp chồng phương thức và ghi đè phương thức
+- đa hình lúc runtime là quá trình gọi phương thức đã được ghi đè trong thời gian thực thi chương trình. Trong quá trình này, một phương thức được ghi đè được gọi thông qua biến tham chiếu
+của một lớp cha.
+- Upcasting là khi biến tham chiếu của lớp cha tham chiếu tới đối tượng của lớp con.
+ví dụ 	
+	class A{};
+	class B extends A{}
+	A a =  new B(); //upcasting
+- phương thức bị ghi đè không là thành viên dữ liệu, vì thế đa hình tại runtime không thể có được bởi thành viên dữ liệu. khi chúng ta truy cập thành viên dữ liệu mà không ghi đè, thì nó 
+sẽ luôn luôn truy cập thành viên dữ liệu của lớp cha.
+- đa hình luc runtime trong java với kế thừa nhiều tầng. 
+==================================================================================================
+NẠP CHỒNG PHƯƠNG THỨC
+- nạp chồng phương thức trong java xảy ra nếu một lớp có nhiều phương thức có tên giống nhau nhưng khác nhau về kiểu dữ liệu hoặc số lượng tham số. 
+- giúp tăng khả năng đọc hiểu chương trình.
+==================================================================================================
+GHI ĐÈ PHƯƠNG THỨC.
+- Ghi đè phương thức xả ra nếu lớp con có phương thức giống lớp cha.nếu lớp con cung cấp sự cài đặt cụ thể cho phương thức đã được cung cấp bởi một lớp cha của nó được gọi là ghi đè phương 
+thức (method overriding) 
+- được sử dụng để cung cấp cài đặt đặc biệt của một phương thức mà đã được định nghĩa ở lớp cha.
+- ghi đè phương thức được sử dụng cho đa hình runtime.
+- Nguyên tắc ghi đè :
+	+ phương thức phải có tên giống với lớp cha
+	+ phương thức phải có tham số giống lớp cha
+	+ lớp con và lớp cha có mối quan hệ thừa kế 
+- phương thức static không thể ghi đè vì phương thức static được ràng buộc với class còn phương thức instance được ràng buộc với đối tượng. Static thuộc về vùng nhớ class còn instance thuộc về vùng nhớ heap.

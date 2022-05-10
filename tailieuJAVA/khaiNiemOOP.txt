@@ -1,0 +1,127 @@
+- Lập trình hướng đối tượng (OOP-Object-Oriented Programming) là một phương pháp hay mô hình giúp tăng năng suất, đơn giản hoá việc bảo trì, dễ dàng mở rộng trong thiết kế phần mềm ;
+- Đối tượng( Object): tất cả những thực thể có trạng thái và hành vi được biết đến như là một đối tượng ví dụ: bàn, ghế, bút,...
+- Lớp(Class) tập hợp các đối tượng được gọi là lớp.
+- Kế thừa( Inheritance): khi một đối tượng được truyền lại tất cả các thuộc tính và phương thức của đối tượng cha được gọi là kế thừa. kế thừa giúp tái sử dụng lại mã nguồn. Nó được sử dụng
+cho đa hình lúc runtime.
+- Đa hình( Polymorphism): khih một nhiệm vụ được thực hiện bởi nhiều cách khác nhau, tính chất này được gọi là đa hình
+- Trừu tượng (Abstraction) là sự ẩn đi những chi tiết bên trong và hiển thị ra các chức năng, tính chất này gọi là trừu tượng bằng cách sử dungk abstract class và interface.
+- Đóng gói (Encapsulation): việc ràng buộc giữa code và data với nhau tạo thành một khối duy nhất được biết đến là đóng gọi. (priviate, punlic, ...)
+===============================================================================================================================================================================
+
+LỚP VÀ ĐỐI TƯỢNG 
+
+- ĐỐI TƯỢNG là một thực thể có trạng thái và hành vi được gọi là đối tượng. 
+  - một đối tượng có 3 trạng thái: 
+	+ trạng thái: đại diện cho dữ liệu( giá trị của đối tượng).
+	+ hành vi: đại diện cho hành vi( chức năng) của một đối tượng như gởi tiền, rút tiền..
+	+ Danh tính: danh tính của một đối tượng thường được cài đặt  thông qua một ID duy nhất. ID này được ẩn danh đối với user bên ngoài. Tuy nhiên nó được sử dụng trong một bộ máy ảo
+	JVM để định danh từng đối tượng
+  - Đối tượng là một thể hiện của môt lớp( class) : lớp là một mẫu hoặc thiết kế từ đó các đối tượng được tạo ra. Vì vậy, đối tượng là các thể hiện của một lớp.
+-LỚP  là một nhóm đối tượng có các thuộc tính chung. Nó là một mẫu hoặc thiết kế từ đó các đối tương được tạo ra. một lớp có thể chứa:
+	+ thành viên dữ liệu
+	+ Contructor
+	+ phương thức
+	+ khối lệnh
+	+ lớp và interface.
+- Đối tượng Annonymous nghĩa là vô danh, một đối tượng không có tham chiếu . nếu sử dụng đối tượng một lần duy nhất thì lựa chọn tạo đối tượng Annonymous là tốt nhất. new classname.method
+=================================================================================================================================================================================
+PACKAGE
+- lợi thế của việc sử dụng packegage :
+	+ để phân loại lớp và interface giúp dễ bảo trì
+	+ cung cấp bảo vệ truy cập
+	+ khắc phục việc đặt trùng tên.
+- package bên trong một package khác được gọi là subpackage hay package con.
+==============================================================================================================================================================================
+CONSTRUCTOR
+- constructor là một dạng đặc biệt của phương thức được sử dụng để khởi tạo các đối tượng. 
+-Java constructor đưuọc gọi tại thời điểm tạo đối tượng. Nó khởi tạo các giá trị để cung cấp dữ liệu cho các đối tượng.
+- Quy tắc tạo constructor:
+	+ tên constructor phải giống tên lớp của nó
+	+ constructor không có kiểu trả về tường minh.
+- có 2 kiểu constructor:
+	+ constructor mặt định( không có tham số truyền vào). nếu không có constructor trong một lớp, trình biên dịch sẽ tự động tạo một constructor mặc định trong lớp đó. cung cấp giá trị 
+	mặc định như 0, null ( tuỳ thuộc vào kiểu dữ liệu) tới đối tượng khởi tạo.
+
+
+	+ constructor tham số được sử dụng để cung cấp các giá trị khác nhau cho các đối tượng khác nhau
+=====================================================================================================================================================
+TỪ KHOÁ THIS
+- từ khoá this trong java là một biến tham chiếu được sử dụng để tham chiếu tới đối tượng của lớp hiện tại.
+- cách sử dụng:
+	+ Tham chiếu tới các biến instance của lớp hiện tại. nếu có sự trùng tên nhau giữa biến toàn cục và tham số thì dùng this để chỉ ra biến instance.
+	+ sử dụng this() để gọi constructor của lớp hiện tại. cách sử dụng này sẽ hữu dụng hơn nếu có nhiều constructor trong một lớp và muốn sử dụng lại constructor. được khai báo dòng
+	lệnh đầu tiên trong constructor.
+	+ gọi phương thức của lớp hiện tại.
+	+ sử dụng từ khoá this như một tham số của phương thức. cách dùng này chủ yếu được sử dụng trong sử lý sự kiện.
+	+ sử dụng từ khoá this như mộ tham số của constructor. tính năng này rất hữu ích nếu chúng ta phải sử dụng một đối tượng trong nhiều lớp.
+	+ sử dụng từ khoá this để trả về instance của lớp hiện tại.trong trường hợp này kiểu trả về của phương thức phải là kiểu class( không là kiểu nguyên thuỷ)
+==================================================================================================================================================================================
+TỪ KHOÁ SUPER
+- từ khoá super trong java là một tham chiếu được sử dụng để tham chiếu trực tiếp đến đối tượng lớp cha gần nhất.
+- cách sử dụng:
+	+ sử dụng để tham chiếu trức tiếp đến biến của lớp cha gần nhất
+	+super() được sử dụng để gọi trực tiếp constructor của lớp cha.	
+	+ để gọi trực tiếp phương thức lớp cha. nó nên dược sử dụng trong trường hợp lớp chứa các phương thức tương tự như lớp cha.
+=================================================================================================================================================================================
+TỪ KHOÁ FINAL
+- từ khoá final được sử dụng để hạn chế người dùng-
+- biến final không thể thay đổi giá trị sau khi khởi tạo. ví dụ : final int A = 10;
+- không thể ghi đè phương thức final, nhưng có thể thừa kế
+- không thể thừa kế lớp final.
+- một biến static final mà không được khởi tạo tại thời điểm khai báo thì đó là biến static final trống. nó chỉ có thể được khởi tạo trong một khối static.
+====================================================================================================================================================================================
+TỪ KHOÁ STATIC
+- từ khoá static được sử dụng để quản lý bộ nhớ. có thể áp dụng từ khoá static với các biến, các phương thức, các khối, các lớp chồng nhau(nested class). từ khoá static thuộc về lớp chứ 
+chứ không thuộc về instance của lớp.
+-biến static được gọi là biến tĩnh . 
+	+ biến static có thể được sử dụng để tham chiếu thuộc tính chung của tất cả đối tượng( mà không là duy nhất cho mỗi đối tượng) ví dụ tên công ty của nhân viên, tên trường học của các sinh viên.
+	+ biến static lấy bộ nhớ chỉ một làn trong class area tại thời gian tải lớp đó.
+	+ biến static giúp chương trình sử dụng bộ nhớ hiệu quả hơn.
+	+ thuộc tính static được chia sẻ tới tất cả đôi tượng.
+- phương thức static
+	+một phương thức static thuộc lớp chứ không phải đối tượng của lớp.
+	+ một phương thức static gọi mà không cần tạo một instance của một lớp.
+	+phương thức static có thể truy cập biến static và có thể thay đổi giá trị của nó
+	+ phương thức static không thể sử dụng biến non-static hoặc gọi trực tiếp phương thức non-static
+	+ từ khoá this và super không thể được sử dụng trong ngữ cảnh static.
+- khối static: 
+	+ được sử dụng để khởi tạo thành viên dữ liệu static
+	+ nó được thực thi trước phương thức main tại lúc tải lớp.
+==================================================================================================================================================================
+ACCESS MODIFIER
+- access modifier xác định phạm vi truy cập của biến, phương thức, constructor hoặc lớp.
+	+ private : chỉ được truy cập trong phạm vi lớp. không thể tạo instance của class bên ngoài nó. một lớp không thể là private hoặc protected, ngoại trừ lớp lồng nhau.
+	+ default : nếu không khai báo modifỉe nào thì nó chính là trường hợp mặc định. default access modifier chỉ được phép truy cập trong cùng package.
+	+ protected : được truy cập trong package và bên ngoài package nhưng phải thừa kế. chỉ áp dụng có biến, phương thức, constructor. không áp dụng cho lớp.
+	+ public : được truy cập mọi nơi.
+======================================================================================================================================================================
+ABSTRACT ( phương thức trừu tượng) 
+-một phương thức được khai báo là abstract và không có trình triển khai thì đó là phương thức trừu tượng. phương thức abstract không có thân phương thức.
+-muốn triển khai phương thức abstract được quyết định bởi lớp con. 
+- phương thức abstract sẽ không có định nghĩa, được theo sau dấu chấm phải và không có ngoặc nhọn.
+===================================================================================================================================================================
+INTERFACE 
+- interface trong java là một bản thiết kế của một lớp. nó chỉ có các phương thức trừu tượng. 
+- interface là một kỹ thuật để thu được tính trừu tượng hoàn toàn và đa kế thừa trong java.
+- các trường của interface là public, static vf final theo mặc định, và các phương thức là public và abstract.
+- một interface là một tập hợp các phương thức trừu tượng. một class triển khai một interface do đó kế thừa các phương thức abstract của interface.
+- một interface không phải 1 lớp, viết một interface giống như viết một lớp. nhưng chúng có 2 định nghĩa khác nhau. một lớp mô tả các thuộc tính hành vi của một đối tượng. một interface
+chứa các hành vi mà một class triển khai. trừ khi một lớp triển khai interface là lớp trừu tượng abstract, con lại tất cả các phương thức của interface cần định nghĩa trong class.
+- đặc điểm:
+	+ không thể khởi tạo một interface.
+	+ không chứa bất cứ hàm contructor nào
+	+ tất cả các phương thức của interface đều là abstract
+	+ không thể chứa một trường nào trừ các trường vừa static và final
+	+ không thể kế thừa từ lớp, được triển khai bởi 1 lớp
+	+ có thể kế thừa từ nhiều interface khác.
+- quy tắc triển khai interface
+	+ một lớp có thể triển khau một hoặc nhiều interface tại một thời điểm.
+	+ một lớp chỉ có thể kế thừa một lớp khác, nhưng được triển khai nhiều interface.
+	+ một interface có thể kế thừa từ môt interface khác.
+- marker( hay tagging) interface là một interface không có thành viên nào mục đích để:
+	+ tạo một cha chung. như với eventlistener interface mà được kế thừa bởi hàng tá cá interface khác trong JavaAPI , bạn có thể sử dụng một tagging interface để tạo
+	môt cha chung cho một nhóm interface. ví dụ : khi một interface kế thừa EventListener thì JVM biết rằng interface cụ thể này đang được sử dụng trong một even
+	+ thêm một kiểu dữ liệu tới một class đó là khái niệm tagging. một class mà triển khai một tagging interface không cần định nghĩa bất kỳ phương thức nào, 
+	nhưng class trở thành một kiểu interface thông qua tính đa hình.
+=========================================================================================================================================================
+

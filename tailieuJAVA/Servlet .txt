@@ -1,0 +1,131 @@
+- Công nghệ Servlet 
+	+ được sử dụng để tạo ứng dụng web.
+	+ một API cung cấp các interface và lớp bao gồm các tài liệu.
+	+ là một thành phần web được triển khai trên máy chủ để tạo ra trang web động.
+- có nhiều interface và các lớp trong API servlet như Sẻvlet, GenericServlet, HttpServlett, ServletRequest, ServReesponse,...
+- nhiệm vụ chính Servlet thực hiện: 
+	+ sử lý các http và trả về kết quả từ cơ sở dữ liệu.
+- các gói Servlets: javax.servlet và javax.srvlet.http.
+- nhược điểm : phải viết code java +html trong cùng một file tạo cảm giác rối rắm.
+==================================================================================================
+cài đặt môi tường  servlet gồm các bước sau:
+	+ thiết lập bộ phát triển Java(JDK)=> đã cài eclipse
+	+ thiết lập web Server - Tomcat
+	+ thiết lập CLASSPATH.
+======================================================================================================
+VÒNG ĐỜI CỦA SERVET : các yêu cầu  HTTP đến máy chủ được uỷ quyền cho bộ chứa servlet,  bộ chứa servlet tải servlet trước khi goi phương thức service(), sau đó servlet container xử lý 
+nhiều yêu cầu bằng cách sinh ra nhiều , mỗi luồng thực hiện service() của một thể hiện duy nhất của servlet.
+
+- phương thức init() 
+	+ được gọi chỉ MỘT LẦN để  khởi tạo servlet.
+	+ thường được tạo khi nguuời dùng lần đầu tiên gọi một URL tưởng ứng với servlet, cũng có thể được chỉ định khi mấy chủ được khởi động lần đầu tiên. mỗi yêu cầu sẽ tạo ra một 
+	luồng mới cho doGet hoặc doPost.
+	+ chỉ đơn giản tạo hoặc tải một số dữ liệu sẽ được sử dụng trong suốt  vòng đời của servlet.
+	ví dụ: 
+	public void init() throws ServletException
+	{
+		// code
+	}
+- Phương thức service()
+	+ là phương thức chính để thực hiện nhiệm vụ thực tế.
+	+ để xử lý các yêu cầu đến từ khách hàng và trả về kết quả.
+	+ kiểm tra các yêu cầu HTTP(GET, POST, PUT, DELETE,..)  và gọi các phương thức doGet, doPost, doPut, doDelete..
+	+ phương thức service được gọi bởi phương thức container và service gọi các phương thức doGet, doPost, doPut, doDelete.., vì vậy khôngg cần làm gì với phương thức service 
+	nhưng phải ghi đè phương thức doGet() và doPost phụ thuôccj vào loạ yêu cầu.
+	ví dụ: 
+		public void service (ServletRequest request , ServletResponse response) throw ServletException , IOException 
+		{
+ 			//code
+		}
+
+- Phương thức doGet()
+	-  từ URL hoặc một HTML Form mà không có METHOD chỉ định và nó phải được xử lý bằng phương thức doGet()
+	- ví dụ:
+		public voiđ  doGet(HttpServletRequest request , HttpServletResponse response) throw ServletException , IOException 
+		{
+			//code
+		}	
+
+- Phương thức doPost() 
+	- từ HTML Form có METHOD là POST và phải được sử lý bằng phương thức  doPost()
+	- ví dụ:
+		public voiđ  doPost(HttpServletRequest request , HttpServletResponse response) throw ServletException , IOException 
+		{
+			//code
+		}
+- Phương thức destroy()
+	- một phần cuối chu kỳ sống của một servlet.
+	- đóng kêts nối cơ sở dữ liệu, chặn các luồng chạy gầm , viết các cookie hoặc đếm số lượt truy cập và thực hiện các hoặc động dọn dẹp khác
+	- ví dụ: 
+		piblic void destroy()
+		{
+			// finalization code
+		}
+-  Đọc form data sử dụng bởi Servlet:
+	+ getParameter: gọi phương thức request.getParameter() để nhận giá trị của tham số form.
+	+ getParameterValues() : gọi thương thức này nếu parameter xuất hiện  trả về nhiều giá trị.
+	+ getParameterNames(): gọi phương thức này trả về tất cả các parameter trong yêu cầu hiện tại. trả về một enumeration,  dùng phương thức hasMoreElements() để xác định khi nào cần dùng 
+	và sử dụng phương thức nextElement() để nhận tên mỗi parameter.
+- Request trong servlet : 
+	+Cookie[] getCookies(): trả về mảng chứa tất cả các đối tượng Cookie mà client giử tới request.
+	+Enumeration getAttributteNames(): trả về một enumeration chứa tên của các thuộc tính có sẵn cho request.
+	+ Enumeration getHeaderNames(): trả về đếm tất cả các tiêu đề request.
+	+ Enumeration getParameterName(): trả về một enumeration of String các đối tượng có chứa tên của các tham số chưa trong request
+	+HttpSession getSession(): trả về phiên hiện tại được kết hợp với request này hoặc nếu không có phiên sẽ tạo ra một phiên.
+	+ Locale getLocale() : trả về ngôn ngữ ưu tiên mà client sẽ chấp nhận nội dung, dựa trên tiêu đề Accept-Language.
+	+ đối tương getAtribute(string name) : trả về giá trị của thuộc tính được đặt tên như một đối tượng, hoặc null nếu không có thuộc tính của tên đã cho tồn tại.
+	+ ServletInputStream getInputStream(): trả request dưới dạng nhị phân.
+	+ String getAuthType: trả về tên của lược đồ xác thực được sử dụng để bảo về servlet.
+	+chuỗi getCharaterEncoding(): trả về tên của mã hoá ký tự được sử dụng trong phần request này.
+	+ String getContextPath(): trả về phần của url chỉ ra ngữ cảnh của request.
+	+ String getHeader(String name): trả về giá trị của tiêu đề request được chỉ định như là 1 chuỗi.
+	+chuỗi getMethod(): trả về tên của phương thức HTTP mà request này thực hiện, ví dụ như GET,POST,OUT..
+	+String getParameter(String name) : trả về giá trị của tham số request như một String hoặc null nếu tham số không tồn tại.
+	+chuỗi getPathInfo(): trả về bất kỳ thông tin đường dẫn bỗ sung liên quan đến ủl, mà cilent giử khi thực hiện requesr này.
+	+ Chuỗi getProtocol(): trả về phiên bản của giao thức theo request.
+	+ chuỗi getQueryString(): trả về chuỗi truy vấn được chứa trong Url request sau đường dẫn.
+	+ chuỗi getRemoteAddr(): trả về địa chỉ giao thức Interner(IP) của client gủi request.
+	+chuỗi getRemoteHost(): trả về tên đầy đủ của client đã giửi request.	.
+	+ chuỗi getRemoteUser(): trả về thông tin đăng nhập của người dùng request này, nếu người dùng đã được xác thực , hoặc null nếu người dùng không được xác thực.
+	+ chuỗi getRequestURL(): trả về một phần của URL của request này từ tên giao thức cho đến chuỗi truy vấn trong dòng đầu tiên của request HTTP.
+	+ chuỗi getRequestedSessionId(): trả về ID phiên xác định bởi client.
+	+ chuỗi getServletPath(): trả về một phần của URL của request này gọi là JSP.
+	+ String[] getParameterValues(String name) : trả về một mảng các đối tượng String chứa tất cả các giá trị mà tham số request cho trước có, hoặc trả về null nếu tham số không tồn tại.
+	+boolean isSecure(): trả về một boolean cho biết request này được thực hiện bằng một kênh an toàn, ví dụ: https.
+	+ int getContentLength(): trả về chiều dài theo byte của thân request và được cung cấp bởi luồng đầu vào, hoặc -1 nếu chiều dài không được biết .
+	+ int getIntHeader(String Name): trả về giá trị của tiêu đề request được chỉ định như một int.
+	+ int getServerPort(): trả về cổng mà request này đã nhận được.
+-Response trong Servlet: một response thường bao gồm status, header, blank line, document.
+	+void setStatus(int sc) đặt mã trạng thái cho respone này.
+	+ String encodeRedirectURL(String URL): mã hoá URL đã chỉ định để sử dụng trong phương thức sendRedirect hoặc  nếu mẫ hoá không cần thiết, sẽ trả về url không thay đổi.
+	+ string encodeURL(String url): mẫ hoá URL đã chỉ định bằng cách bao gồm ID phiên đó hoặc nếu mã hoá không cần thiết trả về URL không thay đổi.
+	+ Boolean containsHeader(String name): trả về một Boolean cho biết header respone đã được đặt chưa,
+	+ boolean isCommited(): trả về một boolean chỉ ra nếu đáp ứng đã được thực hiện.
+	+ void addCookie(Cookie cookie):  thêm cookie được chỉ định vào câu trả lời.
+	+ void addDateHeader(String name, long date) : thêm một header đáp ưng với tên và giá trị ngày.
+	+ void addHeader(String name, String value)  : thêm một header đáp ưng với tên và giá trị đã cho.
+	+ void addIntHeader(String name, int value): thêm một header đáp ứng với tên và giá trị số nguyên.
+	+ void flushBuffer() buộc bất kỳ nội dung nào trong bộ đệm sẽ đưuọc ghi vào máy khách.
+	+ voi reset(): xoá bất kỳ dữ liệu nào tồn tại trong bộ đệm cũng như mã trạng thái và header.
+	+void resetbuffer(): xoá nội dung của bộ đệm cơ bản trong response mà không có header xoá hoặc mã trạng thái.
+	+ void sendError(int sc): gây response lỗi tới máy khách bằng cách sữ dụng mã trạng thái được chỉ định và xoá bộ đệm.
+	+ void sendError(int sc, String msg): gửi response lỗi đến máy khách sử dụng , trạng thái được chỉ định.
+	+void sendRedirect(String location): gửi response chuyển hướng tạm thời tới khách hàng bằng cách sử dụng URL vị trí chuyển hướng được chỉ định.
+	+ void setBufferSize(int size): thiết lập kích thước bộ đệm cho response.
+	+ void setCharaterEncoding(String charset): thiết lập mã hoá ký tư( ký tự MIME) của câu trả lời được gởi tới khách hàng, ví dụ UTF-8.
+	+ void setContentLength(int len) đặt độ dài của nội dung trong response trong HTTP servlet, phương pháp này đặt header HTTP Content-length.
+	+ void setContentType(String type) : thiết lập một header đáp ứng với tên và giá trị ngày.
+	+ void setHeader(String name, String value): đặt header response với tên và giá trị đã cho.
+	+ void setIntHeader(String name, int value): thiết lập header đáp ứng với tên và giá trị số đã cho.
+	+ void setLocale(Locale loc): đặt vị trí câu trả lời, nếu chưa trả lời,
+	+ void setStatus( int sc): đặt mã trạng thái cho response này.
+================================================================================================================================================================
+COOKIE
+- có 3 bước để xác định người dùng cũ quay lại hệ thống:
+	+ tập lệnh của máy chủ gởi môt tập hợp các cookie đến trình duyệt. ví dụ tên, tuổi, số nhận dạng,...
+	+ trình duyệt lưu trữ thong tin này trên máy local để sử dụng trong tương lai.
+	+ trong lần truy cập tiếp theo trình duyệt giử yêu cầu tới web sever, nó sẽ gởi thông tin cookie tới máy chủ và máy chủ sử dụng thông tin đó dễ xác định người dùng.
+method:
+	+ public void setDomain(String pattern): phương thức này thiết lập tên miền mà cookie áp dụng 
+	+ public String getDomain(): phương thức lấy tên miền mà cookie áp dụng.
+	+public void setMaxAge(int expiry) : phương thức này đặt khoảng 

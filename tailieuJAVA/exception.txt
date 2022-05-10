@@ -1,0 +1,5 @@
+Exception là một trình trạng bất thường làm gián đoạn luồng bình thường của chương trình.
+-  vào một thời điểm chỉ xảy ra 1 ngoại lệ và tại thời điểm chỉ có 1 khối catch được thực thi.
+- tất cả các khối catch phải được sắp xếp cụ thể nhất đến chung nhất. 
+- khối lệnh finally trong java đưuọc sử dụng để thực thi các lệnh quang trọng như đóng kết nối, đống  stream. luôn được thực thi cho dù có ngoại lệ xảy ra hay không.
+ hoặc gặp lệnh return không khối try

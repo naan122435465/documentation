@@ -1,0 +1,100 @@
+- so sánh chuỗi bằng phương thức equals(): 
+	+ public boolean equals(Object another) : so sánh 2 chuỗi có phân biệt chữ hoa , chữ thường.
+	+ public boolean equalsIgnoreCase(String another): so sánh 2 chuỗi không phân biệt chữ hoa, chữ thường.
+- so sánh chuỗi bằng toán tử == : được sử dụng để so sánh tham chiếu ( không phải giá trị ) của 2 chuỗi.
+- so sánh chuỗi bằng phương thức compareTo() : so sánh các giá trị theo thứ tự từ điển và trả vê một giá trị số nguyên mô tả nếu chuỗi đầu tiên nhỏ hơn, bằng hơn hoặc lớn hơn chuỗi thứ 2.
+- Nối chuỗi
+	+ nối chuỗi bằng toán tử 
+	+ nối chuỗi bằng hình thức concat(): string1.concat(string2) 
+- Substring (cắt chuỗi) : một phần của chuỗi được gọi là chuỗi con(substring)
+	+ public String substring(int startIndex) : phương thức này trả về đối tượng chuỗi mới là chuỗi con của chuỗi đã cho tính từ startIndex đã nhập đến cuối cùng.
+	+ public String substring(int startIndex, int endIndex) : phương thức này trả về đối tượng chuỗi mới là chuỗi con của chuỗi đã cho tính startIndex đến endIndex đã nhập.
+==========================================================================================================================================================================
+LỚP STRINGBUFFER
+- lớp StringBuffer tương tự trong java ngoại từ nó có thể thay đổi.
+- các contructor quan trọng của lớp StringBuffer:	
+	+ StringBuffer() : tạo ra một bộ đệm chuỗi với dung lượng ban đầu là 16.	
+	+ StringBuffer(String str) : tạo ra một bộ đệm chuỗi với chuỗi cụ thể.
+	+ StringBuffer( int capacity): tạo ra một bộ đệm chuỗi với dung lượng được chỉ định như độ dài chuỗi.
+- các phương thức của lớp StringBuffer :
+	+ public synchronized StringBuffer append( String s) đưuọc sử dụng để nối thêm các chuỗi được chỉ định với chuỗi này.
+	+ public synchronized StringBuffer insert(int offset, String s): được sử dụng để chèn chuỗi chỉ định với chuỗi này tại vị trí quy định.
+	+ public synchronized StringBuffer replace( int startIndex, int endIndex, String str): được sử dụng để thay thể chuỗi từ vị trí startIndex đến endIndext bằng chuỗi str.
+	+ public sysnchronized StringBuffer delete( int startIndex, int endIndex) được sử dụng để xoá chuỗi từ vị trí startIndex đến endIndex  
+	+ public sysnchronized StringBuffer StringBuffer reverse(): được sử dụng để đảo ngược chuỗi.
+	+ public int capacity(): được sử dụng để trả về dung lượng hiện tại.
+	+ public void ensureCapacity(int minimumCapacity) được sử dụng để đảm bảo dung lượng ít nhất bằng mức độ tối thiểu nhất định.
+	+ public char charAt(int index): được sử dụng trả về ký tự tại vị trí quy định.
+	+ public int length(): được sử dụng để trả về chiều dài của chuỗi nghĩa là tổng số ký tự.
+	+ public String subString(int beginIndex): được sử dụng trả về chuỗi con bắt đầu từ vị trí được chỉ định.
+	+ public String substring(int beginIndex, int endIndex): được sử dụng trả về chuỗi con với vị trí bắt đầu và vị trí kết thúc được chỉ định.
+====================================================================================================================================================================
+LỚP STRINGBUILDER
+- lớp StringBuider được sử dụng để tạo chuỗi có thể thay đổi(mutable). lớp StringBuilder trong java tương tự như lớp StringBuilder ngoài trừ nó không đồng bộ(non-synchronized).
+-Các Constructor quan trọng của lớp StringBuilder:
+	+ StringBuilder(): Tạo ra một Builder chuỗi với dung lượng ban đầu là 16.	
+	+ StringBuilder(String str): Tạo ra một Builder chuỗi với chuỗi cụ thể.
+	+ StringBuilder(int capacity): Tạo ra một Builder chuỗi với dung lượng được chỉ định như độ dài chuỗi.
+-Các phương thức của lớp StringBuilder trong java: 
+	+ public StringBuilder append(String s): được sử dụng để nối thêm các chuỗi được chỉ định với chuỗi này. Các phương thức append() được nạp chồng như append(char), append(boolean),
+	 append(int), append(float), append(double), ..
+	+ public StringBuilder insert(int offset, String s): được sử dụng để chèn chuỗi chỉ định với chuỗi này tại vị trí quy định. Các phương thức insert() được nạp chồng như insert(int, 
+	char), insert(int, boolean), insert(int, int), insert(int, float), insert(int, double), ...
+	+ public StringBuilder replace(int startIndex, int endIndex, String str): được sử dụng để thay thế chuỗi từ vị trị startIndex đến endIndex bằng chuỗi str.
+	+ public StringBuilder delete(int startIndex, int endIndex): được sử dụng để xóa chuỗi từ vị trí startIndex đến endIndex.
+	+ public StringBuilder reverse(): được sử dụng để đảo ngược chuỗi.
+	+ public int capacity(): được sử dụng để trả về dung lượng hiện tại.
+	+ public void ensureCapacity(int minimumCapacity): được sử dụng để đảm bảo dung lượng ít nhất bằng mức tối thiểu nhất định.
+	+ public char charAt(int index): được sử dụng trả về ký tự tại vị trí quy định.
+	+ public int length(): được sử dụng trả về chiều dài của chuỗi nghĩa là tổng số ký tự.
+	+ public String substring(int beginIndex): được sử dụng trả về chuỗi con bắt đầu từ vị trí được chỉ định.
+	+ public String substring(int beginIndex, int endIndex): được sử dụng trả về chuỗi con với vị trí bắt đầu và vị trí kết thúc được chỉ định.
+=====================================================================================================================================================================
+tạo lớp Immutable( bất biến) bằng cách thêm  final và thành viên dữ liệu của nó cũng là  final.
+==================================================================================================================================================================
+STRINGTOKENIZER
+- lớp java.util.StringTokenizer cho phép bạn phân tách một chuỗi thành các phần tử token của nó.
+- Các constructor của lớp StringTokenizer:
+	+ StringTokenizer(String str): tạo ra một lớp StringTokenizer với chuỗi chỉ định.
+	+ StringTokenizer(String str, String delim) tạo ra một lớp StringTokenizer dựa trên chuỗi chỉ định và dấu phân cách và cờ hiệu.
+	Nếu cờ hiệu là true, dấu phân cách được xem như là các phần tử token. Nếu là false, dấu phân cách không được tính là các phần tử token.
+- Các phương thức của lớp StringTokenizer:	
+	+ boolean hasMoreToken(): trả về true nếu còn nhiều token trong chuỗi.
+	+ String nextToken(): trả về token tiếp theo khi duyệt đối tượng StringTokenizer.
+	+ String nextToken(String delim): trả về token tiếp theo dựa trên dấu phân cách.
+	+ boolean hasMoreElement(): giống như phương thức hasMoreToken().
+	+ Object nextElement(): giống như nextToken nhưng nó trả về đối tượng
+	+ int countToken(): trả về số lượng các token.
+========================================================================================================================================================
+CÁC PHƯƠNG THỨC CỦA JAVA STRING
+- Phương thức charAt(int index) : trả về giá trị Char của chuỗi tại vị trí có chỉ số index được chỉ định. index bắt đầu bằng 0.
+- compareTo : so sánh string 2 với string 1 theo thứ tự từ điển. trả về số âm( chênh lệch giá trị ký tự) nếu nhỏ hơn, dương nếu lơn hơn, 0 nếu bằng nhau.
+	+ cú pháp. string1.compareto(String2).
+- concat() : nối chuỗi đẫ được chỉ định vào cuối chuỗi đã cho.
+	+ cú pháp : s1 =  s1.concat(s2).
+- contains(): tìm kiếm chuỗi ký tự trong chuỗi này. nó trả về true nếu chuỗi các giá trị char được tìm thấy trong chuỗi này, nếu không trả về false.
+	+ cú pháp: s1.contains(s2): s2 có nằm trong chuỗi s1 hay k?
+- endsWith() : kiểm tra nếu chuỗi này kết thúc với hậu tố nhất định. 
+	+ cú pháp : s1.endWith(s2)
+- equals(): so sánh 2 chuỗi đưa ra dựa trên nội dung của chuỗi. có phân biệt hoa thường.
+- equalsIgoreCase() : so sánh 2 chuỗi dựa trên nội dung của chuỗi mà không phân biệt hoa thường.
+- format(): trả về một chuỗi được format theo miền địa phương.  nếu k chỉ định miền địa phương, mặc định miền bằng phương thức Locale.getDefault()
+- getBytes(): trả về mảng byte của chuỗi.
+- getChars(): sao chép nội dung của chuỗi thành mảng Char cụ thể.
+- indexOf():  trả về chỉ số của các giá trị ký tự đã cho hoặc chuỗi con. nếu k thấy trả lại giá trị -1. 
+- intern() : được sử dụng để trả về chuỗi từ Pool chứa hằng số chuỗi khi nó được tạo bởi từ khoá new.
+- isEmpty(): chuỗi trống trả về true và ngược lại.
+- join(): trả về chuỗi được nói với nhau bởi dấu phân tách.
+- lastIndexOf() trả về chỉ số cuối của ký tự hoặc chuỗi con. nếu không tìm thấy trả về -1. 
+- length(): trả về độ dài của chuỗi.
+- replace(): dùng để thay thế tất cả các ký tự hoặc chuỗi cũ thành ký tự hoặc chuỗi mới.
+- replace(): thay thế tất cả các chuỗi ký tự phù hợp với regex.
+- split(): tách chuỗi này theo biểu thức chính quy( reqular expression) và trả về mảng chuỗi.
+- statsWith() : kiểm tra tiền tố của chuỗi có khớp với giá trị tiền tố đã nhập không.
+- subString: trả về chuỗi con của một chuỗi.
+- toCharArray(): chuyển đổi chuỗi thành mảng ký tự.
+- toLowerCase(): chuyển chuỗi về dạng chữ thường.
+- toUpperCase() : chuyển chuỗi thành dạng chữ hoa.
+- trim(): xoá khoảng trắng đầu và cuối chuỗi.
+- String.valueOf: chuyển đối kiểu dữ liệu thành chuỗi.
+	

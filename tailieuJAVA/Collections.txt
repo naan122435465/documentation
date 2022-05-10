@@ -1,0 +1,300 @@
+LIST là một interface trong java, nó chứa các phương thức để chèn và xoá các phần tử dựa trên chỉ số index.
+- các phương thức: 
+	+ void add(int index, Object element) : để chèn các phần từ vào list tại chỉ số index).
+	+ boolean addAlll( int indext, Collection c): để chèn tất cả các yếu tố của c vào danh sách tại chỉ số index.
+	+ object get(int index): trả về đối tượng được lưu trữ tại chỉ số index trong list.
+	+ object set(int index, Object element): gán phần tử cho vị trí được chỉ định index trong list.
+	+ object remove(int index) : xoá các phần tử tại vị trí có chỉ số index và trả về phần tử đã xoá.
+	+ ListIterator listlerator(): trả về một iterator mà bắt đầu từ phần tử đầu tiên của list.
+	+ ListIterator listIterator(int index) : trả về một iterator mà phần từ bắt đầu từ chỉ số index chỉ định.
+	+ Arrays.asList(array) : add tất cả các phần tử trong array vào list
+ListIterator là một interface được sử dụng để duyệt các phàn tử của list trong java.
+- các phương thức:
+	+ boolean hasNext():trả về true nếu list interator có tồn tại phần tử kế tiếp phần tử hiện tại.
+	+ Object next(): trả về phần tử kế tiếp trong danh sách và vị trí con trỏ tăng lên 1.
+	+ boolean hasPrevious(): trả về true nếu list interator có tồn tại phần tử kế sau phần tử hiện tại.
+	+ Object previous(): trả về phần tử kế sau trong danh sách và vị trí con trỏ giảm đi 1.
+=========================================================================================================================
+ARRAYLIST :
+	+ có thể chứa các phần tử trùng lặp.
+	+ duy trì thứ tự của phần tử được thêm vào
+	+ không đồng bộ.
+	+ cho phép truy cập ngẫu nhiên vì nó lưu dữ liệu theo chỉ mục.	
+	+ thao tác chậm vì cần nhiều sự dịch chuyển nếu bất kỳ phần tử nào bị xoá khỏi danh sách.
+- Constructor :
+	+ ArrayList(): được sử dụng để khởi tạo một mảng trống
+	+ ArrayList(Collection c): ể xây dựng một danh sách mảng được khởi tạo với các phần tử của collection c..
+	+ ArrayList(int capacity) để xây dựng một danh sách mảng mà có dung lượng ban đầu được chỉ định.
+- phương thức:
+	+ boolean add(Object o): để nối thêm phần tử được chỉ định vào cuối một danh sách.
+	+ void add(int index, Object element): để chèn phần tử element tại vị trí index vào danh sách.
+	+ boolean addAll(Collection c): nối tất cả các phần tử trong collection c vào cuối của danh sách, theo thứ tự chúng được trả về bởi bộ lặp iterator.
+	+ boolean addAll(int index, Collection c):  chèn tất cả các phần tử trong collection c vào danh sách, bắt đầu từ vị trí index.
+	+ void retainAll(Collection c): dùng để xoá những phần tử không thuộc collection c ra khỏi danh sách.
+	+ void removeAll(Collection c): dùng để xoá những phần tư thuộc collection ra khỏi danh sách.
+	+ int indexOf(Object o): để trả về chỉ mục trong danh sách với sự xuất hiện đầu tiên của phần tử được chỉ định, hoặc -1 nếu danh sách không chứa phần tử này.
+	+ int lastIndexOf(Object o):  trả về chỉ mục trong danh sách với sự xuất hiện cuối cùng của phần tử được chỉ định, hoặc -1 nếu danh sách không chứa phần tử này.
+	+ Object[] toArray() :  trả về một mảng chứa tất cả các phần tử trong danh sách này theo đúng thứ tự.
+	+ Object[] toArray(Object[] a) :  sử dụng để trả về một mảng chứa tất cả các phần tử trong danh sách này theo đúng thứ tự.
+	+ Object clone() : rả về một bản sao của ArrayList.
+	+ void clear(): để xóa tất cả các phần tử từ danh sách này.
+	+ void trimToSize():cắt dung lượng của thể hiện ArrayList này là kích thước danh sách hiện tại.
+	+ boolean contains(element): trả về là true nếu tìm thấy element trong danh sách, ngược lại trả về false.
+	+ size(): độ dài của list
+=====================================================================================================================================================================
+LỚP LINKEDLIST 
+	+ có thể chứa các phần tử trùng lặp.
+	+ duy trì thứ tự của phần tử được thêm vào.
+	+ không đồng bộ.
+	+ thao tác nhanh vì không phải dịch chuyển nếu bất kỳ phần tử nào bị xoá khỏi danh sách
+	+ có thể được sử dụng như list, stack, hoặc queue.
+- constructor: 
+	+ LinkedList() : để xay dựng một danh sách trống.
+	+ LinkedList(Collection c) : xây dựng một danh sách chứa các phần tử của collection được chỉ định, theo thứ tự chúng được trả về bởi iterator của collection.
+- phương thức: 
+	+ boolean add(Object o) : để nối thêm phần tử được chỉ định vào cuối một danh sách.
+	+ void add(int index, Object element) :chèn các phần tử được chỉ định tại các chỉ số vị trí quy định trong một danh sách.
+	+ void addFirst(Object o) :chèn phần tử được chỉ định vào đầu danh sách.
+	+ void addLast(Object o) : chèn phần tử được chỉ định vào cuối danh sách.
+	+ int size() : trả lại số lượng các phần tử trong một danh sách
+	+ boolean contains(Object o): để trở về true nếu danh sách có chứa một phần tử được chỉ định.
+	+ boolean remove(Object o):  xóa phần tử được chỉ định đầu tiên trong một danh sách.
+	+ Object getFirst(): trả về phần tử đầu tiên trong một danh sách.
+	+ Object getLast(): trả lại phần tử cuối cùng trong một danh sách.
+	+ int indexOf(Object o): trả về chỉ mục trong một danh sách với sự xuất hiện đầu tiên của phần tử được chỉ định, hoặc -1 nếu danh sách không chứa bất kỳ phần tử nào.
+	+ int lastIndexOf(Object o): trả lại chỉ mục trong danh sách với sự xuất hiện cuối cùng của phần tử được chỉ định, hoặc -1 nếu danh sách không chứa bất kỳ phần tử nào.
+	+ boolean contains(element): trả về là true nếu tìm thấy element trong danh sách, ngược lại trả về false.
+sử dụng ArrayList khi ứng dụng cần  truy xuất phần tử nhiều hơn cập nhập và xoá phần tử và chúng ta sẽ sử dụng LinkedList khi ứng dụng của chúng ta cần cập nhập và xoá phần tử nhiều hơn
+truy cập phần tử.
+=======================================================================================================================================================================================
+SET INTERFACE
+Set là một interface kế thừa Collection interface trong java, không chứa các phần tử trùng lặp.
+Set được triển khai bởi:
+	+ HashSet lưu trữ các phần tử của nó trong bảng băm, là cách thực hiện tốt nhất, tuy nhiên không đảm bảo về thứ tự các phần tử được chèn vào.
+	+ TreeSet: lưu trữ các phần tử của nó trong một cây, xắp xếp các phần  tử của nó dựa trên các giá trị của chúng, về cơ bản là chậm hơn HashSet.
+	+ LinkedHashSet:được triển khai dưới dạng bảng băm với cấu trúc dữ liệu danh sách liên kết, sắp xếp dự trên thứ tự chúng được chèn vào tập hợp.
+	+ EnumSet : là một cài đặt chuyên biệt để sử dụng với các kiểu enum.
+- các phương thức: 
+	+ boolean add(Object element):để chèn các phần tử vào set.
+	+ boolean addAll(Collection c): để chèn tất cả các phần tử của c vào set.
+	+ void clear(): Xóa tất cả các phần tử khỏi set.
+	+ boolean contains(Object element):Trả về true nếu tập hợp này chứa phần tử đã chỉ định.
+	+ boolean containsAll(Collection c): Trả về true nếu set chứa tất cả các phần tử của collection c đã chỉ định.
+	+ boolean equals(Object o): So sánh các đối tượng được chỉ định với set.
+	+ boolean isEmpty() : Trả về true nếu set không chứa phần tử.
+	+ int hashCode(): Trả về giá trị mã băm.
+	+ Iterator iterator() : Trả về một trình vòng lặp iterator để duyệt qua các phần tử của set.
+	+ boolean remove(Object o): Xóa phần tử đã chỉ định khỏi set.
+	+ boolean removeAll(Collection c): Xóa khỏi set tất cả các phần tử của nó được chứa trong collection c đã chỉ định.
+	+ boolean retainAll(Collection c) : Chỉ giữ lại các phần tử trong set được chứa trong collection c đã chỉ định.
+	+ int size(): Trả về số lượng các phần tử của set.
+	+ Object[] toArray(): Trả về một mảng chứa tất cả các phần tử trong set.
+	+ T[] toArray(T[] a): rả về một mảng chứa tất cả các phần tử trong set, kiểu run-time của mảng trả về là kiểu đã chỉ định.
+============================================================================================================================================================================
+HASHSET
+- đặc điểmm:
+	+ chỉ chứa các phần tử duy nhất.
+	+ lưu trữ các phần tử bằng cách sử dụng một cơ chết gọi là băm( hash table)
+- constructor:
+	+ HashSet() : để khởi tạo một HashSet trống có dung lượng ban đầu mặc định (16) và hệ số tải (0,75).
+	+ HashMapHashSet(Collection c): để xây dựng một HashSet chứa collection c được chỉ định.
+	+ HashSet(int initialCapacity): xây dựng một HashSet trống với dung lượng ban đầu được chỉ định và hệ số tải mặc định là 0,75.
+	+ HashSet(int initialCapacity, float loadFactor): ể xây dựng HashSet trống có dung lượng ban đầu được chỉ định và hệ số tải được chỉ định.
+- các phương thức: 
+	+ boolean add(Object element):Nó được sử dụng để chèn các phần tử vào HashSet.
+	+ boolean addAll(Collection c):Nó được sử dụng để chèn tất cả các phần tử của c vào HashSet.
+	+ void clear():Xóa tất cả các phần tử khỏi HashSet.
+	+ boolean contains(Object element): Trả về true nếu tập hợp này chứa phần tử đã chỉ định.
+	+ boolean containsAll(Collection c):Trả về true nếu HashSet chứa tất cả các phần tử của collection c đã chỉ định.
+	+ boolean equals(Object o):So sánh các đối tượng được chỉ định với HashSet.
+	+ boolean isEmpty():Trả về true nếu HashSet không chứa phần tử.
+	+ int hashCode():Trả về giá trị mã băm
+	+ Iterator iterator():Trả về một trình vòng lặp iterator để duyệt qua các phần tử của HashSet.
+	+ boolean remove(Object o):Xóa phần tử đã chỉ định khỏi HashSet.
+	+ boolean removeAll(Collection c): Xóa khỏi HashSet tất cả các phần tử của nó được chứa trong collection c đã chỉ định.
+	+ boolean retainAll(Collection c): Chỉ giữ lại các phần tử trong HashSet được chứa trong collection c đã chỉ định.
+	+ int size(): Trả về số lượng các phần tử của HashSet.
+	+ Object[] toArray():Trả về một mảng chứa tất cả các phần tử trong HashSet.
+	+ T[] toArray(T[] a): Trả về một mảng chứa tất cả các phần tử trong HashSet, kiểu run-time của mảng trả về là kiểu đã chỉ định.
+====================================================================================================================================================================
+LINKEDHASHSET
+- Đặc điểm của LinkedHashSet :
+	+ chỉ chứa các phần tử duy nhất giống như HashSet.
+	+ cho phép các phần tử null.
+	+ duy trì thứ tự chèn.
+=====================================================================================================================================================================
+TREESET
+TreeSet dử dụng cấu trúc cây để lưu trữ các phần tử. các đối tượng của lớp TressSet được lưu trữ tăng dần.
+- các đặc điểm:
+	+ chỉ chứa các phần tử duy nhất giống như HashSet.
+	+ thời gian truy xuất nhanh
+	+ Duy trì thứ tự tăng dần.
+=====================================================================================================================================================================
+MAP INTERFACE
+-Map được sử dụng để lưu trữ và truy xuất dữ liệu theo cặp key và valủ. mỗi cặp key và value được gọi là mục nhập ( entry). Map trong java chỉ chứa các giá trị key duy nhất. máp rất hữu ích 
+trong tìm kiếm , cập nhập hoặc xoá các phần tử dựa vào các key.
+- các phương thức: 
+	+ Object put(Object key, Object value): để chèn một mục nhập trong map hiện tại.
+	+ void putAll(Map map): để chèn map chỉ định vào map hiện tại.
+	+ Object remove(Object key) : để xóa một mục nhập của key được chỉ định.
+	+ Object get(Object key) : để trả lại giá trị cho khoá được chỉ định.
+	+ boolean containsKey(Object key): để tìm kiếm key được chỉ định từ map hiện tại.
+	+ Set keySet() : để trả đối tượng Set có chứa tất cả các keys.
+	+ Set entrySet(): để trả lại đối tượng Set có chứa tất cả các keys và values.
+	+ Object getKey(): được dùng để lấy key.
+	+ Object getValue() : được sử dụng để lấy value.
+======================================================================================================================================================================================
+HashMap trong java là một lớp thừa kế phương thức AbstractMap và triển khai của Map Interface trong Collectión Framework nên nó sẽ có mọt vài đặc điểm và phương thức tương đồng với Map. 
+HasMap được sử dụng để lưu trữ các phần tử dưới dạng "key/value". key và value là kiểu dữ liệu bất kỳ và có thể truy cập các giá trị của HashMap bằng một key cụ thể.
+- Đặc điểm:
+	+ HashMap lưu trữ dữ liệu dưới dạng cặp key và value.
+	+ Nó chứa các key duy nhất.
+	+ Nó có thể có 1 key là null và nhiều giá trị null.
+	+ Nó duy trì các phần tử KHÔNG theo thứ tự
+-có thể làm cho HashMap đồng bộ bằng cách gọi phương thức: Map m = Collections.synchronizedMap(hashMap);
+- Constructor:
+	+ HashMap(): để khởi tạo một HashMap trống.
+	+ HashMap(int capacity, float loadFactor): để xây dựng một HashMap trống với dung lượng (capacity) ban đầu được chỉ định và hệ số tải (loadFactor) được chỉ định.
+	+ HashMap(int capacity): để xây dựng một HashMap trống với dung lượng ban đầu được chỉ định và hệ số tải mặc định là 0,75.
+	+ HashMap(Map t): để xây dựng HashMap mới với một Map đã cho.
+- Phương thức: 
+	+ void clear(): Xóa tất cả các phần tử của HashMap.
+	+ Object clone() : Trả về một bản copy của HashMap.
+	+ boolean containsKey(Object key): Trả về true nếu HashMap chứa một phần tử có key được chỉ định.
+	+ boolean containsValue(Object value): Trả về true nếu HashMap chứa một phần tử có giá trị (value) được chỉ định.
+	+ Set entrySet() : Trả về Collection view các ánh xạ có trong HashMap.
+	+ Object get(Object key): Trả về giá trị của key được chỉ định.
+	+ boolean isEmpty() : Trả về true nếu HashMap trống.
+	+ Set keySet(): Trả về một Set interface chứa tất cả các key của HashMap.
+	+ Object put(Object key, Object value): Thêm một cặp key-value vào HashMap.
+	+ void putAll(Map t) : Sao chép các phần tử của Map được chỉ định vào HashMap.
+	+ Object remove(Object key): Xóa một phần tử có key được chỉ định ra khởi HashMap.
+	+ int size(): Trả về số phần tử của HashMap.
+	+ Collection values():Trả về Collection của các giá trị có trong HashMap.
+- các hoạt động bên trong HashMap:	
+	+ HashMap hoạt động dựa trên nguyên lý của việc băm dữ liệu( hashing).
+	+ Map.Entry interface : interface này là nơi đại diện chứa các entry( cặp key -value) của map
+	+Phương thức hashCode(): HashMap cung cấp hoạt động put(key, value) để lưu trữ và get(key) để lấy ra giá trị từ HashMap. Khi phương thức put được gọi, HashMap sẽ gọi phương thức 
+	hashCode() từ đối tượng key để tính toán giá trị hash, sau đó dùng hash để tìm đến bucket[1] tương ứng và lưu trữ đối tượng Entry trong đó. Khi get() được sử dụng để lấy ra value,
+	một lần nữa đối tượng key được dùng để tính toán ra hash, từ đó tìm được bucket - nơi chứa dữ liệu của key đó.
+	+ Phương thức equals(): phương thức này thường dùng để so sánh 2 object. Trong trường hợp của HashMap là so sánh 2 key, ngoài ra phương thức equals() được dùng để xử lý hashing 
+	collision (xung đột hash value - các key khác nhau nhưng lại có hash value giống nhau, như vậy chúng được xếp chung vào cùng một bucket. Trong trường hợp đó, các đối tượng value
+	được lưu bên trong một linked list). Trong khi hashCode() được dùng để tìm ra hash của key thì equals() giúp ta tìm được chính xác value tương ứng với key trong trường hợp một hash
+	code trỏ tới nhiều value.
+====================================================================================================================================================
+LINKEDHASHMAP
+- đặc điểm : 
+	+ LinkedHashMaplưu trữ dữ liệu dưới dạng cặp key và value.
+	+ Nó chứa các key duy nhất.
+	+ Nó có thể có 1 key là null và nhiều giá trị null.
+	+ Nó duy trì các phần tử theo thứ tự chèn.
+=============================================================================================================================================================
+TREEMAP	
+- đặc điểm: 
+	+ TreeMap lưu trữ dữ liệu dưới dạng cặp key và value.
+	+ Nó chứa các key duy nhất.
+	+ Nó KHÔNG cho phép bất kỳ key nào là null và nhưng có thể có nhiều giá trị null.
+	+ Nó duy trì các phần tử được thêm vào theo thứ tự key tăng dần.
+- constructor: 
+	+ TreeMap() :  để khởi tạo một TreeMap trống.
+	+ TreeMap(Comparator comparator) : để khởi tạo một TreeMap trống, được sắp xếp theo comparator đã cho.
+	+ TreeMap(Map m): để khởi tạo một TreeMap chứa các phần tử được copy từ map đã cho, được sắp xếp theo key một cách tự nhiên.
+	+ TreeMap(SortedMap m):để khởi tạo một TreeMap chứa các phần tử được copy từ map đã cho, được sắp xếp theo SortedMap đã chỉ định.
+- phương thức: 
+	+ void clear(): Xóa tất cả các phần tử của TreeMap.
+	+ Object clone(): Trả về một bản copy của TreeMap.
+	+ boolean containsKey(Object key): Trả về true nếu TreeMap chứa một phần tử có key được chỉ định.
+	+ boolean containsValue(Object value) : Trả về true nếu TreeMap chứa một phần tử có giá trị (value) được chỉ định.
+	+ Set entrySet() : Trả về Collection view các ánh xạ có trong TreeMap.
+	+ Object get(Object key): Trả về giá trị của key được chỉ định.
+	+ boolean isEmpty(): Trả về true nếu TreeMap trống.
+	+ Set keySet(): Trả về một Set interface chứa tất cả các key của TreeMap.
+	+ Object put(Object key, Object value): Thêm một cặp key-value vào TreeMap.
+	+ void putAll(Map t): Sao chép các phần tử của Map được chỉ định vào TreeMap
+	+ Object remove(Object key) : Xóa một phần tử có key được chỉ định ra khởi TreeMap.
+	+ int size(): Trả về số phần tử của TreeMap.
+	+ Collection values(): Trả về Collection của các giá trị có trong TreeMap.
+	+ Object firstKey(): Trả về key đầu tiên của map đã được sắp xếp.
+	+ Object lastKey(): Trả về key cuối cùng của map đã được sắp xếp.
+	+ Collection values(): Trả về Collection của các giá trị có trong TreeMap.
+	+ SortedMap subMap((K startKey, K endKey) : Trả về một phần của TreeMap bắt đầu từ phần tử có key startKey đến phần tử có key endKey.
+===================================================================================================================================================================
+HASHTABLE 
+- Đặc điểm: 
+	+ Hashtable là một mảng của list. Mỗi list được biết đến như một xô chứa các phần tử. Ví trí của một xô được xác định bằng việc gọi phương thức hashcode(). Hashtable cũng lưu trữ dữ 
+	liệu dưới dạng cặp key và value.
+	+ Nó chứa các key duy nhất.	
+	+ Nó KHÔNG thể có bất kỳ key hoặc giá trị nào là null.
+	+ được đồng bộ.
+===============================================================================================================================================================================
+EMNUMSET	
+- phương thức:
+	+ static <E extends Enum<E>> EnumSet<E> allOf(Class<E> elementType): tạo ra một bộ enum chứa tất cả các phần tử trong kiểu phần tử được chỉ định. 
+	+ static <E extends Enum<E>> EnumSet<E> copyOf(Collection<E> c): tạo ra một bộ enum khởi tạo từ bộ sưu tập được chỉ định.
+	+ static <E extends Enum<E>> EnumSet<E> noneOf(Class<E> elementType) :  tạo một tập hợp enum rỗng với kiểu phần tử được chỉ định.
+	+ static <E extends Enum<E>> EnumSet<E> of(E e) : ạo một bộ enum ban đầu có chứa các phần tử được chỉ định.
+	+ static <E extends Enum<E>> EnumSet<E> range(E from, E to): tạo một bộ enum ban đầu chứa các phần tử được chỉ định
+	+ EnumSet<E> clone():trả về một bản sao của đối tượng set này.
+===============================================================================================================================================================================
+ENUMMAP
+- lớp EnumMap trong java là một cài đặt chuyên biệt để sử dụng với các enum keys. 
+public class EnumMap<K extends Enum<K>,V> extends AbstractMap<K,V> 
+    implements Serializable, Cloneable 
+K: đây là kiểu key để lưu trữ.
+V: đây là kiểu giá trị được ánh xạ. 
+=============================================================================================================================================================================
+LỚP COLLECTIONS	
+- lớp Collections chỉ chứa các phương thức static để thao tác và trả về các collection . kế thừa lớp Object
+- đặc điểm:
+	+ Hỗ trợ các thuật toán đa hình hoặc động trên cácc collection.
+	+ ném ngoại lên NullPointerException nếu các collection hoặc đối tượng lớp cung cấp cho là null.
+- phương thức: 
+	+ static <T> boolean addAll(Collection<? super T> c, T... elements): để thêm tất cả các phần tử quy định vào bộ sưu tập được chỉ định.
+	+ static <T> Queue<T> asLifoQueue(Deque<T> deque) : trả về một đối tượng Deque như một hàng đợi LIFO (Last-In-First-Out).
+	+ static <T> int binarySearch(List<? extends T> list, T key, Comparator<? super T< c) : để tìm kiếm danh sách được chỉ định cho đối tượng được chỉ định sử dụng thuật toán tìm kiếm 
+	nhị phân.
+	+ static <E> List<E> checkedList(List<E> list, Class<E> type) : để trả về một chế độ xem kiểu động của đối tượng list được chỉ định.
+	+ static <E> Set<E> checkedSet(Set<E> s, Class<E> type) : để trả về một chế độ xem kiểu động của đối tượng set được chỉ định.
+	+ static <E> SortedSet<E>checkedSortedSet(SortedSet<E> s, Class<E> type) : trả về một chế độ xem kiểu động của đối tượng SortedSet được chỉ định.
+	+ static void reverse(List<?> list):  để đảo ngược thứ tự của các phần tử trong danh sách được chỉ định..
+	+ static <T> T max(Collection<? extends T> coll, Comparator<? super T> comp) : để trả về phần tử max của bộ sưu tập đã cho, theo thứ tự được sắp xếp bởi comparator được chỉ định.
+	+ static <T extends Object & Comparable<? super T>>T min(Collection<? extends T> coll) :  để trả về phần tử min của bộ sưu tập đã cho, theo thứ tự được sắp xếp bởi comparable được
+	chỉ định.
+	+ static boolean replaceAll(List list, T oldVal, T newVal) :để thay thế tất cả các lần xuất hiện của một giá trị được chỉ định trong danh sách với một giá trị khác.
+========================================================================================================================================================================================
+SORTING COLLECTIONS
+- lớp Collection có thể sắp xếp các phần tử của: 
+	+ các đối tượng String.
+	+ các đối tượng của lớp Wrapper.
+	+ cac đối tượng của lớp do người dùng định nghĩa.
+- Lớp Collections trong java cung cấp các phương thức static để sắp xếp các phần tử của collection. Nếu các phần tử collection thuộc kiểu Set hoặc Map, chúng ta có thể sử dụng TreeSet hoặc
+TreeMap. Nhưng chúng ta không thể sắp xếp các phần tử của List. Collections cung cấp phương thức sort() để phân sắp xếp các phần tử của List.
+=========================================================================================================================================================================================
+LỚP PROPERTIES
+- lớp Properties được sử dụng để tạo đối tượng chứa cặp khoá (key) và giá trị (key) như một chuỗi. là lớp con của Hashtable.
+- phương thức: 
+	+ public void load(Reader r) : tải dữ liệu từ đối tượng Reader.
+	+ public void load(InputStream is): tải dữ liệu từ đối tượng InputStream.
+	+ public String getProperty(String key): trả về giá trị dựa trên key.
+	+ public void setProperty(String key,String value) : đặt thuộc tính trong đối tượng thuộc tính.
+	+ public void store(Writer w, String comment): ghi các thuộc tính trong đối tượng Writer.
+	+ public void store(OutputStream os, String comment) : ghi các thuộc tính trong đối tượng OutputStream.
+	+ storeToXML(OutputStream os, String comment): ghi các thuộc tính trong đối tượng Writer để tạo tài liệu xml.
+	+ public void storeToXML(Writer w, String comment, String encoding) :ghi các thuộc tính trong đối tượng Writer để tạo ra tài liệu xml với mã hoá được chỉ định.
+=========================================================================================================================================================================
+ITERATOR INTERFACE 
+- interator là một interface được sử dụng để thay thế Enumerations. để duyệt các phần tử từ đầu đến cuối một collection, cho phép xoá phần tử khi lặp một conllection.
+- phương thức: 
+	+ public boolean hasNext():  trả về true nếu iterator còn phần tử kế tiếp phần tử đang duyệt.
+	+ public object next(): rả về phần tử hiện tại và di chuyển con trỏ trỏ tới phần tử tiếp theo.
+	+ public void remove():loại bỏ phần tử cuối được trả về bởi Iterator. Nó hiếm khi được sử dụng.
+- phương thức của listIterator :
+	+ public void add(Object obj): Chèn obj vào phía trước phần tử sẽ được trả về bởi lệnh gọi tiếp theo tới next().
+	+ public boolean hasNext(): Trả về true nếu có phần tử tiếp theo. Nếu không, trả về false.
+	+ public boolean hasPrevious() : Trả về true nếu có phần tử trước. Nếu không, trả về false. 
+	+ public Object next(): Trả về phần tử tiếp theo. Một NoSuchEuityException được ném nếu không có phần tử tiếp theo. 
+	+ public int nextIndex() : Trả về chỉ mục của phần tử tiếp theo. Nếu không có phần tử tiếp theo, trả về kích thước của danh sách.
+	+ public Object previous(): Trả về phần tử trước. Một NoSuchEuityException được ném nếu không có phần tử trước đó.
+	+ public int previousIndex(): Trả về chỉ mục của phần tử trước. Nếu không có phần tử trước, trả về -1.
+	+ public void remove(): oại bỏ các phần tử hiện tại khỏi danh sách. Một IllegalStateException được ném nếu remove() được gọi trước next() hoặc trước previous().
+	+ public void set(Object obj): 	Chỉ định obj cho phần tử hiện tại. Đây là phần tử được trả về lần cuối bởi một lệnh gọi tới next() hoặc previous().

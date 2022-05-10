@@ -1,0 +1,21 @@
+REGEX
+- Java regex API cung cấp 1 interface và 3 lớp trong gói java.until.regex
+	+ interface MatchResult
+	+ lớp Matcher
+	+ lớp Pattern
+	+ lớp PatternSystaxException
+- lớp Matcher:	
+	+ boolean matches() : kiểm tra xem biểu thức chính quy có khớp với mẫu hay không.
+	+ boolean find() : tìm biểu thức tiếp theo khớp với mẫu
+	+ boolean find(int start)tim biểu thức tiếp thep khớp với mẫu từ số bắt đầu cho
+	+ String group() trả về chuỗi con phù hợp.
+	+ int start() trả về vị trí bắt đầu của chuỗi con phù hợp.
+	+ int end() trả về vị trí kết thúc chuổi con phù hợp
+	+ int groupCount : trả về tổng số các chuổi con phù hợp.
+- lớp Pattern :
+	+ static Pattern compile( String regex) : biên dịch regex đã cho và trả về thể hiện của pattern.
+	+ Matcher matcher( CharSequence input) : tạo một matcher khớp với đầu vào đã cho với mẫu.
+	+ static boolean mathces( String regex, CharSequence input) : biên dịch biểu thức chính quy và tìm kiếm các chuỗi con từ chuỗi input phù hợp với mẫu regex
+	+ String[] split( CharSequence input) : chia mỗi input đã cho thành các mảng các kết quả trùng khớp với mẫu đã cho
+	+ String pattern(): trả về mẫu regex      
+ https://regex101.com/ : web test regex online                                                 

@@ -1,0 +1,116 @@
+Annotation được hiểu là một dạng chú thích hoặc một dạng siêu dữ liệu được dùng để cung cấp thông tin dữ liệu cho mã nguồn java. Các chú thích không ảnh hưởng trực tiếp đến hoạt động của mã 
+mà chúng chú thích. các Annotation được sử dụng trong mã nguồn sễ được biên dịch thành bytecode và sử dụng kỹ thuật phản chiếu ( reflection ) đểtruy vấn thông tin siêu dữ liệu và đưa ra hành
+động thích hợp. có thể chú thích các lớp , phương thức , các biến, các gói và các  tham số trong java.
+Java Annotation có 2 loại: 
+	+ Các Annotation được tích hợp sẵn.
+	+ Annotation do người dùng tự định nghĩa.
+Cấu trúc của một Annotation trong Java: bắt đầu với ký hiệu @ sau đó là tên của chú thích.
+Chức năng:
+	+ chỉ dẫn trình biên dịch (compiler)
+	+ chỉ dẫn trong thời điểm biên dịch (build-time)
+	+ chỉ dẫn trong thời gian chạy (runtime) 
+- @SpringBootApplication : chỉ cho Spring Boot biết nơi nó khởi chạy lần ddầu, để nó cài đặt mọi thứ
+- @Component : là một Annotation đánh dấu trên các class đêr giúp Spring biết nó là một bean gồm có 3 loại chính @Controller, @Service, @Repository
+- @Controller là một annotation ở class. là chuyên môn hoá của @Compomnent. nó đánh dấu class là một class để xử lý request web. Nó thường được sử dụng để phục vụ các request từ IU.Mặc định
+thì nó trả về một chuỗi cho biết route nào cần redirect. nó chủ yếu được dùng với @RequestMapping. 
+- @Service : thường được sử dụng ở class. nó cho biết rằng class này chứa business login.
+- @Repository : thường sử dụng ở class. Repository là một DAOs( Data Access Object) , sẽ truy cập trực tiếp vào database. Repository thực hiện tất cả các hoạt động liên quan đến database.
+- @Required :  nó áp dụng cho method bean setter. nó chỉ ra rằng bean được chú thích phải được điền vào thời điểm cấu hình với thuộc tính bắt buộc. nếu không nó sẽ ném ra một ngoại lệ 
+BeanInitizationEception.
+- @Autowired : biểu thị rằng các thuộc tính sẽ được auto wired. Nó được sử dụng để autowire Spring Bean trên các  method setter, instance variablle và constructor. Spring sẽ sử dụng lại 
+các Bean được lấy từ IoC mà không cần phải khởi tạo lại. Spring Container auto wire bean bằng cách match data-type. 
+thường sử dụng @Autowire trong 3 trờng hợp sau:
+	+ Properties trong @Service
+	+ Setter
+	+ contrustor
+
+- @RequestMapping : được sử dụng để map để các request. có nhiều phần tử tuỳ chọn như consumes, header, method, naem, params, path, produces, và value. được sử dụng với các lớp cũng như 
+phương thức.
+- @GetMapping: map HTTP GET request trên method cụ thể. Dùng để tạo một điểm cuối trong web serrvice. và được sử dụng thay cho @RequestMapping ( method =  RequestMethod.GET).
+- @PostMapping: sử dụng khi gửi data tới server để tạo ra tài nguyên mới. Thay cho @RequestMapping(method = RequestMethod.POST).
+- @PutMapping: sử dụng để thay đổi thông tin của một tài nguyên đã tồn tại trong hệ thống bằng cách sử dụng nội dung trong body của request. Nó được sử dụng thay vì
+ sử dụng: @RequestMapping (method = RequestMethod.PUT).
+- @DeleteMapping: sử dụng để xóa một resource chỉ định. Nó được sử dụng thay vì sử dụng: @RequestMapping (method = RequestMethod.DELETE).
+- @Configuration : để chỉ ra rằng, class được khai báo sẽ khai báo 1 hoặc nhiều @Bean method ttrong class đó. thường để trogng lớp Elasticsearch, Thymeleaf, đa ngôn ngữ...
+- @Bean : Đánh dấu trên method thông báo cho Spring, method đó sẽ sinh ra một bean và được quản lí bởi Spring Container.→ Tất cả các Method sử dụng annotation @Bean phải nằm trong class 
+onfiguration.
+- @ComponentScan : để thông báo cho spring container phải biết vào package nào trong dự án để quét các annotation và tạo ra Bean.
+- @ProperrtySoure : để cho Spring biết tìm các file properties cấu hình cho hệ thống ở đâu. đồng thời sử dụng @Value để lấy giá trị trong file properties
+ví dụ :    
+    @Configuration
+    @PropertySource("classpath:application.properties")
+    public class MongoDBConfiguration {
+
+        @Value("${mongodb.url}")
+        private String url;
+
+        @Value("${mongodb.db}")
+        private String name;
+    }
+- @Valid : dùng để kiểm tra dữ liệu có đúng như mình mong muốn hay không.
+- @Value: @Value được sử dụng trên các thuộc tính của class, có nhiệm vụ lấy thông tin từ file properties và gán vào biến tìm thấy. 
+- @ModelAttribute: đánh dấu một đối tượng được gửi lên bởi Form Request. là cầu nối giữa Controller và view. từ controller chúng ta truyền các dữ liệu qua cho view thông qua ModelAttribute.
+từ View chúng ta sẽ sử dụng Thymeleaf để đọc các dữ liệu từ model và hiển thị ra cho người dùng.
+	+ tầng view chúng ta sử dụng model để lấy các giá tị từ người dùng gắn vào thucọ tính modelAttribute.
+	+ tầng controller sử dụng @ModelAttribute là tham số trong phương thức để lấy các giá trị từ view.
+- @PathVariable: đánh dấu một biến được chứa trên đường dẫn của Controller, được sử dụng để xử lý những URI động, có một hoặc nhiều parameter trên URI.
+- @RequestParam : để bắt các giá trị các tham số mà người dùung truyền vào trên url theo định dạng key và value.
+- @RequestBody: được sử dụng để lấy các giá trị mà người dùng gởi lên server mà các giá trị đó được chứa trong phần thân (body) của request.
+- @ResponseBody  : đêr nói cho controller biết rằng sẽ trả về một đối tượng object kiểu json cho client chứ không render ra một trang view.
+- @Scope : là phạm vi bean được sinh ra và bị phá huỷ dưới sự quản lý của Spring Container . khi bean sinh ra nó có 5 scope ( phạm vi được sử dụng) :	
+	+ singleton : đây là scope mặc định của 1 bean khi được sinh ra. Nếu ta không khai báo scope cụ thể thì bean sẽ lấy singleton scope. Singleton bean có nghĩa là bean chỉ tạo ra 1 lần
+	 và được sử dụng trong container. Chỉ duy nhất 1 bean tồn tại trong container.
+	+ prototype : ngược lại với singleton ta muốn có nhiều bean (đối tượng) thì ta sử dụng scope prototype.
+	+ Request : Bean được sinh ra thông qua các request http (yêu cầu) từ người dùng. Chỉ được dùng trong các ứng dụng web.
+	+ Session : Bean được sinh ra thông qua các http session.
+	+ Global-session : Bean được sinh ra thông qua các request http (yêu cầu) từ người dùng. Chỉ được dùng trong các ứng dụng web.
+=======================================================================================================================================================================
+CÁC ANNOTATION CỦA HIBERNATE
+Hibernate sử dụng các Annotation để mô tả thông tin cho một Entity. 
+- @Entity  : khai báo với spring class này sẽ được kết nối với database dưới dạng một table nào đó.
+- @Table(name =<table_name>) : Annotation này giúp chúng ta define được chính xác tên table ở database. nếu không define annotation này, tên table sẽ được sinh tự động theo rule của hibernate
+ví dụ: tên class MyBook thì tên table là my_book.
+- @id: định danh primary key cho table. 
+- @GeneratedValue( strategy = GenerationType.IDENTITY): giá trị số tự tăng dần incremental.
+- @Column : tương tự như @Table , annotation này giúp chúng ta define được các option cho column.được sử dụng để chỉ định thông tin chi tiết của cột mà một field của entity sẽ được ánh xạ với một
+column trong database: 
+	+ thuộc tính name được sử dụng để chỉ định tên cột nào trong database map với tên file được chú thích. nếu không chỉ định, hibernate sẽ lấy tên field map với tên cột trong database.
+	+ thuộc tính length cho phép kích thước của cột. @Column không chỉ rõ phần tử  length , mặc định nó là 255.
+	+ thuộc tính nullable cho phép cột được đánh dấu không NULL khi schema được tạo ra, giá nullable mặc định là true
+	+ unique cho phép cột được đánh dấu chỉ chứa giá trị duy nhất.
+
+- @Transient : để thông báo rằng thuộc tính/ phương thức này không liên quan tới cột nào dưới database. khi đó  hibernate sẽ bỏ qua file này.
+- @Temporal: để chú thích cho cột dữ liệu ngày tháng và thời gian. 
+có 3 giá trị chó TemporalType:
+	+ TemporalType.DATE: chú thích cột sẽ lưu trưc ngày tháng năm( bỏ đi thời gian)
+	+ TemporalType.TIME: chú thích cột sẽ lưu trữ thời gian( giờ phút giây) .
+	+ TemporalType.TIMESTAMP: chú thích cột sẽ lưu trữ ngày tháng và cả thời gian.
+
+- @GeneratedValue : để Hibernate tự động tạo ra giá trị gán vào cho một cột trong trường hợp insert mới một entity và database. nó có thể là gắn trên cột id hoặc một cột nào đó.
+có 2 tham số : strategy và generator.
+	+ GenerationType.AUTO: sẽ được gán giá trị tự động, giá trị đó có thể được sinh ra bởi SEQUENCE hoặc tự tăng nếu cột này có kiểu INDENTITY . Nó phụ thuộc vào loại database. 
+- @UUID là một lớp của java cho phép bạn tạo ra một chuỗi 36 ký tự ngẫu nhiên. với 36 ký tự ngẫu nhiên,  chúng ta có thể sử dụng UUID với @GeneratedValue để Hibernate tạo ra một chuỗi ngẫu nhiên kiểu
+này gán cho giá trị của cột. 
+- @Lob : thường chú thích cùng với @Column để nói rằng cột đó có kiểu BLOB hoặc CLOB. 
+- @ManyToOne: mô tả một quan hệ N-1. nó thường được sử dụng cùung với @JoinColumn.  Annotation @ForiegnKey cho phép chỉ định rõ tên Foreign Key sẽ được tạo ra.
+	+ FetcchType.LAZY: chỉ tải khi được gọi. 
+	+ FetchType.EAGER: hãy truy vấn toàn bộ các cột của bảng liên quan.
+- @OneToMany : mô tả quan hệ 1-N 
+- @OneToOne: mô tả quan hệ 1-1
+- @ManyToMany : mô tả quan hệ N_N
+- @OrderBy: được sử dụng để sắp xếp một danh sách
+=======================================================================================================================================================================================
+validation 
+- @NotNull – kiểm tra giá trị null
+- @AssertTrue – kiểm tra giá trị thuộc tính là true
+- @Size – kiểm tra độ dài min and max
+- @Min – kiểm tra giá trị nhỏ nhất
+- @Max – Kiểm tra giá trị lớn nhất
+- @Email – kiểm tra email có hợp lệ
+- @NotEmpty – kiểm tra không được trống và empty
+- @NotBlank – kiểm tra giá trị không được null hoặc khoảng trắng
+- @Positive and @PositiveOrZero – kiểm tra chỉ được phép là số nguyên dương từ 0 trở đi
+- @Negative and @NegativeOrZero – kiểm tra số âm
+- @Past and @PastOrPresent – kiểm tra ngày từ quá khứ đến hiện tại.
+- @Future and @FutureOrPresent – kiểm tra ngày từ hiện tại đến tương lai
+==========================================================================================================================================================================================
